@@ -1,0 +1,181 @@
+{
+  "01-open-plan": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ],
+    "linework": [
+      1920,
+      1280
+    ]
+  },
+  "02-living": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "03-dining": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "04-kitchen": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "05-entry": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "06-stair": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "07-main-bedroom": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "08-guest-studio": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "09-ensuite": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "10-gallery": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "11-deck-exterior": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ],
+    "linework": [
+      1920,
+      1280
+    ]
+  },
+  "12-upper-terrace": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "13-reading-corner": {
+    "source": "v12",
+    "size": [
+      1920,
+      1280
+    ],
+    "clay": [
+      1920,
+      1280
+    ]
+  },
+  "13-reading-people": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "14-living-people": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "15-dining-people": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "16-terrace-people": {
+    "source": "portra",
+    "size": [
+      1536,
+      1024
+    ]
+  }
+}

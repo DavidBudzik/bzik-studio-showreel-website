@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BZIK — Sell the house before it's built</title>
+<meta name="description" content="Renders, walkthroughs and interactive 3D assembly for container-house distributors, contractors and real estate. Every output rendered from one dimension-true model.">
+<meta name="theme-color" content="#F3F3F0">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=20">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script type="module" src="js/main.js?v=35"></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="BZIK"><svg aria-hidden="true" focusable="false" viewBox="0 0 1566 595" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M434.033 56.2707C457.583 78.0207 474.083 104.871 476.033 137.271C476.933 171.621 464.333 199.671 441.083 224.421C431.183 234.621 420.233 242.871 408.233 250.671C406.733 251.571 405.383 252.471 403.883 253.521C391.433 261.171 378.233 266.421 364.733 271.671C365.333 271.671 365.333 271.671 368.183 271.821C416.333 274.521 462.383 281.571 498.233 316.671C517.733 338.571 526.733 364.821 525.833 393.921C522.833 440.721 494.483 479.871 460.733 510.171C445.883 522.771 429.833 533.571 412.733 543.171C412.133 543.471 412.133 543.471 409.283 545.121C349.883 578.421 281.033 594.771 213.083 594.621C208.583 594.621 204.083 594.621 199.583 594.621C172.733 594.771 146.033 592.371 119.933 585.621C118.433 585.171 117.083 584.871 115.583 584.421C83.3328 575.721 55.2827 562.371 31.7327 538.671C30.6828 537.621 29.4828 536.421 28.4328 535.371C11.6328 518.121 1.88275 493.371 0.232749 469.671C0.232749 468.471 0.0827853 467.271 0.0827853 466.071C-1.41721 426.621 17.6328 391.221 43.7327 363.171C44.4827 362.421 45.2327 361.521 45.9827 360.771C57.9827 347.871 71.1828 336.921 85.7328 327.171C90.0828 327.321 91.7328 328.671 95.0328 331.521C107.633 345.471 124.283 364.221 129.233 382.671C127.433 388.221 123.233 392.271 119.333 396.621C104.483 413.871 93.3828 435.471 94.2828 458.871C96.3828 474.321 102.983 487.221 115.133 497.121C135.833 511.371 162.983 516.171 187.583 516.471C188.783 516.471 189.833 516.471 191.033 516.471C218.483 516.771 244.733 515.571 271.733 510.171C273.383 509.721 275.033 509.421 276.683 509.121C321.683 499.671 363.983 483.171 399.233 453.171C400.133 452.421 401.033 451.521 402.083 450.771C413.933 439.971 424.283 423.921 427.733 408.171C428.033 406.971 428.333 405.771 428.633 404.571C431.783 386.121 428.183 370.221 418.283 354.621C402.983 333.171 378.383 324.171 353.483 318.921C309.233 311.571 264.983 319.671 222.833 333.621C219.233 334.671 219.233 334.671 214.733 334.671C213.833 332.871 213.083 331.071 212.183 329.271C203.783 312.921 194.483 297.771 183.533 283.071C181.883 280.821 180.233 278.421 178.733 276.171C196.433 268.221 214.433 261.021 232.583 254.121C252.383 246.621 272.033 238.821 291.233 229.671C291.833 229.371 291.833 229.371 294.533 228.021C308.183 221.571 321.083 214.521 333.233 205.671C333.983 205.071 333.983 205.071 337.583 202.521C354.533 189.471 367.133 172.971 370.733 151.671C371.783 136.521 368.033 123.621 358.883 111.621C339.533 89.7207 309.833 81.9207 281.633 79.9707C231.983 77.5707 181.433 88.8207 142.733 121.671C128.333 134.871 118.283 153.771 116.933 173.421C115.133 215.871 140.783 249.621 166.733 280.671C205.583 327.321 222.833 378.921 219.233 439.671C217.133 459.771 212.333 484.221 198.233 499.671C189.833 505.371 183.233 506.421 173.333 504.921C172.133 504.771 170.933 504.621 169.733 504.471C141.983 500.421 141.983 500.421 136.733 495.171C135.683 485.421 137.633 477.471 141.083 468.471C153.083 434.271 150.533 401.121 135.083 368.571C122.633 343.971 103.583 323.721 84.0828 304.521C75.9828 296.571 68.6328 288.171 61.7328 279.171C61.1328 278.271 60.5328 277.521 59.9328 276.771C34.1328 243.171 19.5828 202.971 24.9827 160.071C31.1327 118.521 56.0328 82.9707 89.3328 58.0707C105.233 46.3707 121.883 36.9207 139.733 28.6707C141.383 27.7707 143.183 27.0207 144.833 26.1207C234.533 -14.3793 357.833 -10.3293 434.033 56.2707Z" fill="currentColor"/>
+<path d="M1539.23 39.1707C1549.28 49.3707 1555.13 62.4207 1555.88 76.6707C1554.83 110.571 1532.33 138.321 1509.68 161.571C1508.03 163.371 1506.38 165.171 1504.58 166.971C1496.48 175.671 1487.03 182.871 1477.58 190.071C1475.63 191.421 1473.83 192.921 1472.03 194.271C1458.23 204.921 1444.13 213.621 1428.68 221.871C1425.38 223.671 1422.08 225.471 1418.63 227.271C1397.93 238.821 1376.33 247.971 1354.58 257.421C1287.08 286.371 1287.08 286.371 1276.58 306.771C1274.48 314.871 1274.63 321.171 1278.08 328.671C1297.28 358.521 1347.83 367.521 1379.18 377.871C1446.23 399.921 1515.98 424.671 1551.68 490.071C1561.88 510.621 1569.83 533.571 1562.33 556.371C1557.53 568.071 1548.83 577.671 1537.73 583.671C1524.53 588.771 1511.63 587.421 1498.73 582.171C1481.03 573.471 1467.68 561.171 1455.23 546.171C1453.88 544.671 1452.53 543.021 1451.33 541.521C1450.58 540.621 1449.83 539.871 1449.23 538.971C1448.48 538.071 1447.73 537.321 1446.98 536.421C1445.48 534.771 1444.13 532.971 1442.63 531.321C1442.03 530.571 1441.28 529.671 1440.53 528.921C1439.03 526.971 1437.53 525.171 1436.03 523.371C1406.93 489.471 1370.03 464.871 1330.73 444.171C1329.23 443.421 1327.73 442.521 1326.23 441.771C1308.38 432.321 1290.53 423.171 1272.23 414.621C1195.88 378.621 1195.88 378.621 1182.23 342.171C1177.13 326.421 1178.78 310.821 1185.68 295.821C1204.28 262.221 1238.63 241.671 1269.83 221.571C1278.83 215.871 1287.68 209.871 1296.53 204.021C1298.33 202.971 1299.98 201.771 1301.78 200.571C1326.53 184.221 1349.63 166.071 1371.23 145.671C1372.13 144.771 1373.18 143.871 1374.08 142.971C1390.73 127.221 1403.63 107.121 1416.08 88.0707C1424.48 75.1707 1433.03 62.7207 1443.23 51.1707C1443.68 50.7207 1443.68 50.7207 1445.78 48.1707C1471.28 20.8707 1509.68 15.9207 1539.23 39.1707Z" fill="currentColor"/>
+<path d="M910.883 70.8207C922.733 81.9207 932.633 96.7707 936.233 112.671C936.383 113.271 936.383 113.271 936.983 116.121C941.783 145.221 932.483 171.171 915.983 194.721C902.483 212.871 885.983 229.071 868.283 243.021C864.533 246.021 860.783 249.021 857.033 252.321C847.583 260.421 837.833 268.071 827.933 275.571C822.683 279.621 817.283 283.821 812.033 288.021C803.183 294.771 794.333 301.671 785.483 308.421C772.133 318.621 758.933 328.971 745.733 339.171C744.683 339.921 743.783 340.671 742.733 341.571C726.233 354.471 710.033 367.671 693.983 381.321C690.983 383.871 687.983 386.271 684.983 388.671C674.633 397.071 665.033 405.771 655.583 415.221C654.833 415.971 654.233 416.721 653.483 417.471C619.133 451.971 619.133 451.971 618.983 475.221C619.283 483.021 620.033 487.821 625.733 493.671C637.883 504.321 655.733 505.071 671.183 504.921C672.833 504.921 674.483 504.921 676.283 504.921C731.333 503.721 785.033 481.971 836.033 462.921C865.283 452.121 894.683 444.321 924.533 457.221C933.233 461.871 938.783 469.371 943.583 477.621C946.583 488.271 946.733 497.571 942.083 507.621C931.583 525.921 914.183 534.471 894.833 540.771C893.483 541.221 891.983 541.671 890.633 542.121C875.783 546.921 860.783 550.821 845.783 554.571C844.283 554.871 842.933 555.321 841.433 555.621C815.633 561.921 789.833 567.471 763.733 571.671C762.083 571.971 760.583 572.271 759.083 572.421C689.633 583.221 602.783 589.971 542.633 546.771C529.583 536.121 520.883 520.671 517.733 504.171C513.833 467.421 530.783 437.271 552.983 409.371C557.033 404.571 561.083 399.921 565.283 395.271C568.133 392.271 570.833 389.121 573.533 386.121C579.233 379.671 585.083 373.671 591.083 367.671C592.133 366.621 593.033 365.571 594.083 364.521C600.083 358.671 606.083 352.971 612.533 347.571C615.833 344.721 619.133 341.721 622.433 338.721C627.683 333.921 632.933 329.421 638.333 325.071C644.033 320.421 649.583 315.621 654.983 310.671C661.583 304.671 668.333 298.971 675.233 293.271C680.183 289.221 685.133 285.171 689.933 280.971C696.833 274.971 703.883 269.121 711.083 263.571C719.633 256.971 727.883 249.921 736.133 242.721C741.683 237.921 747.233 233.271 752.933 228.621C759.533 223.221 765.833 217.671 772.133 211.821C775.283 209.121 778.433 206.421 781.583 203.721C782.483 202.821 783.383 201.921 784.433 201.171C786.983 198.921 789.383 196.671 791.933 194.571C806.333 181.971 822.383 166.521 825.683 147.021C826.283 139.371 824.183 134.871 819.233 129.171C804.533 115.671 779.183 117.771 760.583 118.521C709.883 121.371 661.583 137.121 613.583 152.571C611.783 153.321 609.833 153.921 607.883 154.521C604.433 155.571 600.983 156.771 597.533 157.821C572.183 166.221 541.733 174.771 516.383 162.021C506.633 155.871 500.483 148.371 497.333 137.271C495.383 126.171 498.083 116.121 504.233 106.671C539.333 58.5207 657.683 47.8707 713.033 38.7207C778.733 28.5207 856.883 25.9707 910.883 70.8207Z" fill="currentColor"/>
+<path d="M1049.93 49.2207C1061.78 57.7707 1067.63 68.7207 1071.23 82.6708C1072.13 88.9708 1072.13 95.1208 1072.13 101.571C1072.13 102.471 1072.13 102.471 1072.13 107.121C1072.13 112.071 1072.13 117.171 1072.13 122.121C1072.13 127.671 1072.13 133.071 1072.13 138.471C1072.13 149.121 1072.13 159.771 1072.13 170.421C1071.98 182.871 1072.13 195.171 1072.13 207.621C1072.13 229.821 1071.98 252.021 1071.98 274.071C1071.98 295.521 1071.98 316.971 1071.98 338.421C1071.98 361.821 1071.98 385.371 1071.98 408.771C1071.98 411.171 1071.98 413.721 1071.98 416.121C1071.98 417.471 1071.98 418.671 1071.98 419.871C1071.98 428.571 1071.98 437.121 1071.98 445.821C1071.98 456.321 1071.98 466.821 1071.98 477.471C1071.98 482.871 1071.98 488.121 1071.98 493.521C1071.98 499.371 1071.98 505.221 1071.83 511.071C1071.83 512.721 1071.98 514.371 1071.98 516.171C1071.83 534.321 1067.03 547.521 1054.73 561.171C1042.88 571.821 1028.63 575.721 1012.88 575.121C997.133 573.471 985.733 567.171 975.233 555.171C972.683 551.271 970.733 547.671 969.233 543.171C968.783 541.821 968.333 540.321 967.733 538.821C965.483 530.871 965.933 522.921 965.933 514.671C965.933 512.871 965.933 511.071 965.933 509.121C965.933 504.171 965.933 499.221 965.933 494.121C965.933 488.721 965.933 483.321 965.933 477.921C965.933 467.271 965.933 456.771 965.933 446.121C965.933 437.571 965.933 428.871 965.783 420.321C965.783 419.721 965.783 419.721 965.783 416.571C965.783 414.021 965.783 411.621 965.783 409.071C965.783 385.821 965.783 362.421 965.783 339.021C965.783 317.721 965.783 296.271 965.783 274.971C965.783 253.071 965.783 231.021 965.783 209.121C965.783 196.821 965.783 184.521 965.783 172.221C965.783 161.721 965.783 151.221 965.783 140.721C965.783 135.321 965.783 130.071 965.783 124.671C965.783 118.821 965.783 113.121 965.783 107.271C965.783 105.621 965.783 103.971 965.783 102.171C965.783 86.5707 969.233 74.4207 978.233 61.6707C979.133 60.4707 980.033 59.1208 980.783 57.7708C999.533 38.5708 1027.43 35.4207 1049.93 49.2207Z" fill="currentColor"/>
+<path d="M1203.53 47.1207C1215.68 55.6707 1222.88 65.4207 1227.23 79.6707C1228.13 85.0707 1228.13 90.1707 1228.28 95.5707C1228.28 97.0707 1228.28 98.7207 1228.28 100.221C1228.43 105.171 1228.43 110.121 1228.58 115.071C1228.58 115.971 1228.58 115.971 1228.58 120.321C1228.73 129.321 1228.73 138.321 1228.73 147.321C1228.88 156.621 1229.03 165.921 1229.18 175.071C1229.33 182.271 1229.33 189.471 1229.33 196.671C1229.33 200.121 1229.33 203.421 1229.48 206.871C1230.23 234.921 1230.23 234.921 1223.03 242.571C1218.23 246.471 1213.13 249.321 1207.73 252.171C1188.38 267.021 1174.58 286.971 1168.73 310.671C1166.78 334.971 1172.33 354.771 1188.23 373.671C1197.83 384.021 1210.28 393.621 1222.88 400.071C1227.23 403.671 1227.23 403.671 1228.43 409.071C1228.43 411.321 1228.43 413.571 1228.43 415.821C1228.43 417.021 1228.43 418.221 1228.43 419.421C1228.43 423.471 1228.43 427.521 1228.28 431.571C1228.28 434.421 1228.28 437.271 1228.28 439.971C1228.28 445.971 1228.28 451.821 1228.28 457.671C1228.13 465.171 1228.13 472.821 1228.13 480.321C1228.13 486.021 1228.13 491.871 1228.13 497.721C1228.13 500.421 1228.13 503.271 1228.13 505.971C1228.13 527.421 1226.48 545.271 1210.73 561.171C1198.43 571.671 1184.78 575.721 1168.73 575.271C1153.28 573.471 1140.53 565.971 1130.78 553.971C1122.08 542.721 1121.63 529.371 1121.63 515.721C1121.63 514.671 1121.63 514.671 1121.63 510.021C1121.63 505.071 1121.63 499.971 1121.63 495.021C1121.63 489.471 1121.63 484.071 1121.63 478.521C1121.63 467.871 1121.63 457.221 1121.63 446.571C1121.63 437.871 1121.63 429.171 1121.63 420.471C1121.63 419.271 1121.63 417.921 1121.63 416.721C1121.63 414.171 1121.63 411.621 1121.63 409.071C1121.63 385.521 1121.63 361.971 1121.63 338.421C1121.63 316.821 1121.63 295.371 1121.48 273.771C1121.48 251.571 1121.48 229.521 1121.48 207.321C1121.48 194.871 1121.48 182.571 1121.48 170.121C1121.48 159.471 1121.48 148.971 1121.48 138.321C1121.48 132.921 1121.48 127.521 1121.48 122.121C1121.48 116.271 1121.48 110.421 1121.48 104.571C1121.48 102.921 1121.48 101.271 1121.48 99.4707C1121.63 82.2207 1126.73 68.2707 1138.73 55.6707C1155.83 39.1707 1182.83 34.9707 1203.53 47.1207Z" fill="currentColor"/>
+</svg></a>
+    <ul>
+      <li><a href="#process" data-i18n="nav.process">How it works</a></li>
+      <li><a href="#explore" data-i18n="nav.explore">Live 3D</a></li>
+      <li><a href="#work" data-i18n="nav.work">Work</a></li>
+      <li><a href="#packages" data-i18n="nav.outputs">Packages</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="he" aria-pressed="false" lang="he">עב</button>
+    </div>
+    <a class="btn" href="mailto:bzik.david@gmail.com?subject=Container%20house%20visualization" data-i18n="cta.short">Start a project</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker hero-in" style="--i:0" data-i18n="hero.kicker">Visualization for container homes</p>
+      <h1 class="hero-title">
+        <span class="hero-line hero-in" style="--i:1" data-i18n="hero.t1">Sell the house</span>
+        <span class="hero-line hero-in measure" style="--i:2"><span data-i18n="hero.t2">before it's built.</span>
+          <svg class="hero-dim" viewBox="0 0 100 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7H100M0.5 2V12M99.5 2V12" vector-effect="non-scaling-stroke"/></svg>
+          <span class="hero-dim-tag" aria-hidden="true">1 : 1</span></span>
+      </h1>
+      <p class="lede hero-in" style="--i:3" data-i18n="hero.lede">Photoreal images, films and interactive 3D that make buyers say yes. Every one built to the millimetre from your own drawings.</p>
+      <div class="hero-actions hero-in" style="--i:4">
+        <a class="btn magnet" href="mailto:bzik.david@gmail.com?subject=Container%20house%20visualization"><span data-i18n="cta.send">Book a project call</span> <span class="arr">→</span></a>
+        <a class="link-quiet" href="#explore"><span data-i18n="hero.cta2">Explore the live model</span> <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <div class="hero-stage hero-in" style="--i:2">
+      <div class="axo-box" id="heroBox">
+        <canvas id="heroAxo" aria-label="Rotating line axonometry of a five-container house"></canvas>
+        <div class="axo-labels"></div>
+        <img class="axo-fallback" src="assets/img/axo-iso.png" alt="Isometric line drawing of the container house" hidden>
+      </div>
+      <p class="chip chip-live"><i class="pulse" aria-hidden="true"></i><span data-i18n="hero.live">Live 3D model</span></p>
+      <a class="chip chip-src" href="#process">
+        <img src="assets/img/a101-thumb.jpg" alt="" width="120" height="78">
+        <span><b data-i18n="hero.src.t">From your PDF</b><small data-i18n="hero.src.b">A-101 ground floor, 1:50, to 3D</small></span>
+      </a>
+      <p class="hero-spec">5 × 40 ft HC · 12 190 × 7 320 mm</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <dl class="hero-meta hero-in" style="--i:5">
+      <div><dt data-i18n="meta.1t">Built from</dt><dd data-i18n="meta.1d">Your own plans</dd></div>
+      <div><dt data-i18n="meta.2t">Accuracy</dt><dd data-i18n="meta.2d">To the millimetre</dd></div>
+      <div><dt data-i18n="meta.3t">One model</dt><dd data-i18n="meta.3d">Every output</dd></div>
+      <div><dt data-i18n="meta.4t">Made for</dt><dd data-i18n="meta.4d">Sales teams</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- STORY: plan → model → assembly -->
+<section class="story" id="process">
+  <div class="story-pin">
+    <div class="axo-box" id="storyBox">
+      <canvas id="storyAxo" aria-label="Line axonometry that turns from plan into a 3D assembly as you scroll"></canvas>
+      <div class="axo-labels"></div>
+      <img class="axo-fallback" src="assets/img/axo-plan.png" alt="Plan and isometric line drawings of the container house" hidden>
+    </div>
+    <div class="story-side">
+      <div class="story-caps">
+        <div class="story-cap" data-at="plan">
+          <p class="kicker" data-i18n="cap.plan.k">01 · It starts with your PDF</p>
+          <h2 class="h-1" data-i18n="cap.plan.t">Your plan, exactly as drawn.</h2>
+          <p class="body" data-i18n="cap.plan.b">No redrawing, no guesswork. We build straight on top of your sheets, so every wall lands exactly where you put it.</p>
+        </div>
+        <div class="story-cap" data-at="extrude">
+          <p class="kicker" data-i18n="cap.ext.k">02 · From lines to volume</p>
+          <h2 class="h-1" data-i18n="cap.ext.t">Walls rise out of the drawing.</h2>
+          <p class="body" data-i18n="cap.ext.b">Five 40 ft High Cubes, 12,190 × 7,320 mm, traced to the millimetre. Your buyer sees a home; your engineer sees the numbers match.</p>
+        </div>
+        <div class="story-cap" data-at="assembly">
+          <p class="kicker" data-i18n="cap.asm.k">03 · Built in sequence</p>
+          <h2 class="h-1" data-i18n="cap.asm.t">Show how it comes together.</h2>
+          <p class="body" data-i18n="cap.asm.b">Piers, modules, steel, glass, deck. A step-by-step build that answers "how does modular work?" before anyone asks.</p>
+        </div>
+        <div class="story-cap" data-at="explode">
+          <p class="kicker" data-i18n="cap.exp.k">04 · Every level</p>
+          <h2 class="h-1" data-i18n="cap.exp.t">Pull it apart. Win the room.</h2>
+          <p class="body" data-i18n="cap.exp.b">Ground floor, upper floor and roof, separated, so clients understand the house in seconds.</p>
+          <img class="cap-fallback" src="assets/img/axo-exploded.png" alt="Exploded isometric line drawing of the container house" width="1600" height="1200" loading="lazy">
+        </div>
+        <div class="story-cap" data-at="section">
+          <p class="kicker" data-i18n="cap.sec.k">05 · Section</p>
+          <h2 class="h-1" data-i18n="cap.sec.t">Nothing to hide.</h2>
+          <p class="body" data-i18n="cap.sec.b">Cut straight through the stair, the beams and the openings. Transparency that builds trust and shortens sales calls.</p>
+        </div>
+      </div>
+      <ol class="steps" id="steps">
+        <li data-step="0"><span class="n">01</span><span data-i18n="step.0">Set out piers</span></li>
+        <li data-step="1"><span class="n">02</span><span data-i18n="step.1">C1 · north module</span></li>
+        <li data-step="2"><span class="n">03</span><span data-i18n="step.2">C2 · middle module</span></li>
+        <li data-step="3"><span class="n">04</span><span data-i18n="step.3">C3 · south module</span></li>
+        <li data-step="4"><span class="n">05</span><span data-i18n="step.4">Seam steel + stair</span></li>
+        <li data-step="5"><span class="n">06</span><span data-i18n="step.5">C4 · upper north</span></li>
+        <li data-step="6"><span class="n">07</span><span data-i18n="step.6">C5 · upper middle</span></li>
+        <li data-step="7"><span class="n">08</span><span data-i18n="step.7">Glazing + doors</span></li>
+        <li data-step="8"><span class="n">09</span><span data-i18n="step.8">Deck + pergolas</span></li>
+        <li data-step="9"><span class="n">10</span><span data-i18n="step.9">Terrace, shade, roof</span></li>
+      </ol>
+      <div class="legend">
+        <span><i style="background:#fff"></i><span data-i18n="leg.shell">Container shell</span></span>
+        <span><i style="background:#131313"></i><span data-i18n="leg.steel">Steel</span></span>
+        <span><i style="background:#E6ECEE"></i><span data-i18n="leg.glass">Glazing</span></span>
+        <span><i style="background:#F2A4C3"></i><span data-i18n="leg.now">Current step</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORE: free interactive viewer -->
+<section class="explore" id="explore">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><p class="kicker" data-i18n="ex.k">Live demo · Interactive 3D</p><h2 class="h-1" style="margin-top:16px" data-i18n="ex.t">Let them walk around it.</h2></div>
+      <p class="lede" data-i18n="ex.b">This viewer can live on your website. Clients orbit, explode and cut through the house, floor by floor and layer by layer. It turns browsers into buyers.</p>
+    </div>
+  </div>
+    <div class="explore-stage" id="exploreStage">
+      <div class="axo-box" id="exploreBox">
+        <canvas id="exploreAxo" tabindex="0" aria-label="Interactive 3D model of the container house. Drag or use arrow keys to orbit, plus and minus to zoom."></canvas>
+        <div class="axo-labels"></div>
+        <img class="axo-fallback" src="assets/img/axo-iso.png" alt="Isometric line drawing of the container house on its plan sheet" hidden>
+        <p class="explore-hint" id="exHint" data-i18n="ex.hint">Drag to orbit · pinch or Ctrl/⌘ + scroll to zoom · double-click to reset</p>
+        <div class="zoom-btns">
+          <button type="button" data-zoom="1" aria-label="Zoom in">+</button>
+          <button type="button" data-zoom="-1" aria-label="Zoom out">−</button>
+          <button type="button" data-reset aria-label="Reset view">↺</button>
+          <button type="button" data-fs aria-label="Full screen" aria-pressed="false"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        </div>
+      </div>
+      <div class="explore-ctrl">
+        <div class="ex-row"><label for="exBuild" class="kicker" data-i18n="ex.build">Build sequence</label><span class="num" id="exStep">10 / 10</span></div>
+        <input type="range" id="exBuild" min="0" max="10" step="0.01" value="10">
+        <p class="ex-name" id="exName"></p>
+        <button type="button" class="ex-btn" id="exPlay"><span aria-hidden="true">▶</span> <span data-i18n="ex.play">Play the build</span></button>
+        <div class="ex-group" role="group" aria-label="View">
+          <button type="button" class="ex-btn" data-view="1" aria-pressed="true" data-i18n="ex.iso">3D</button>
+          <button type="button" class="ex-btn" data-view="0" aria-pressed="false" data-i18n="ex.plan">Plan</button>
+        </div>
+        <div class="ex-group">
+          <button type="button" class="ex-btn" id="exExplode" aria-pressed="false" data-i18n="ex.explode">Explode</button>
+          <button type="button" class="ex-btn" id="exSection" aria-pressed="false" data-i18n="ex.section">Section</button>
+        </div>
+        <div class="ex-sec">
+          <p class="kicker" data-i18n="ex.display">Display</p>
+          <div class="ex-display" role="group" aria-label="Display">
+            <button type="button" class="ex-chip" data-display="full" aria-pressed="true" data-i18n="ex.d.full">Full model</button>
+            <button type="button" class="ex-chip" data-display="walls" aria-pressed="false" data-i18n="ex.d.walls">Walls + furniture</button>
+            <button type="button" class="ex-chip" data-display="structure" aria-pressed="false" data-i18n="ex.d.structure">Structure</button>
+          </div>
+        </div>
+        <div class="ex-sec">
+          <p class="kicker" data-i18n="ex.focus">Focus</p>
+          <div class="ex-focus" role="group" aria-label="Focus area">
+            <button type="button" class="ex-chip" data-focus="all" aria-pressed="true" data-i18n="ex.f.all">Whole house</button>
+            <button type="button" class="ex-chip" data-focus="ground" aria-pressed="false" data-i18n="ex.f.ground">Ground floor</button>
+            <button type="button" class="ex-chip" data-focus="upper" aria-pressed="false" data-i18n="ex.f.upper">Upper floor</button>
+            <button type="button" class="ex-chip" data-focus="stair" aria-pressed="false" data-i18n="ex.f.stair">Stair + entry</button>
+            <button type="button" class="ex-chip" data-focus="deck" aria-pressed="false" data-i18n="ex.f.deck">Deck + pergola</button>
+            <button type="button" class="ex-chip" data-focus="terrace" aria-pressed="false" data-i18n="ex.f.terrace">Roof terrace</button>
+          </div>
+        </div>
+        <div class="ex-sec">
+          <p class="kicker" data-i18n="ex.layers">Layers</p>
+          <div class="ex-layers" role="group" aria-label="Layers">
+            <button type="button" class="ex-layer" data-layer="shell" aria-pressed="true"><i style="background:#fff"></i><span data-i18n="ex.l.shell">Containers</span></button>
+            <button type="button" class="ex-layer" data-layer="steel frame" aria-pressed="true"><i style="background:#B4B5B0"></i><span data-i18n="ex.l.steel">Steel + frames</span></button>
+            <button type="button" class="ex-layer" data-layer="glass" aria-pressed="true"><i style="background:#E4ECEF"></i><span data-i18n="ex.l.glass">Glazing</span></button>
+            <button type="button" class="ex-layer" data-layer="timber" aria-pressed="true"><i style="background:#E3CFB4"></i><span data-i18n="ex.l.timber">Timber</span></button>
+            <button type="button" class="ex-layer" data-layer="interior accent" aria-pressed="true"><i style="background:#F7F6F2"></i><span data-i18n="ex.l.interior">Interior walls</span></button>
+            <button type="button" class="ex-layer" data-layer="floor" aria-pressed="true"><i style="background:#F5EFE6"></i><span data-i18n="ex.l.floor">Floors</span></button>
+            <button type="button" class="ex-layer" data-layer="furniture" aria-pressed="true"><i style="background:#DCD3C5"></i><span data-i18n="ex.l.furniture">Furniture</span></button>
+            <button type="button" class="ex-layer" data-layer="roof pv" aria-pressed="true"><i style="background:#C6CCD3"></i><span data-i18n="ex.l.roof">Roof + solar</span></button>
+            <button type="button" class="ex-layer" data-layer="pier" aria-pressed="true"><i style="background:#DDDDD8"></i><span data-i18n="ex.l.pier">Foundations</span></button>
+          </div>
+        </div>
+        <a class="btn" href="mailto:bzik.david@gmail.com?subject=Interactive%203D%20viewer" style="margin-top:auto;justify-content:center"><span data-i18n="ex.cta">Get this for your listings</span> <span class="arr">→</span></a>
+      </div>
+    </div>
+  
+</section>
+
+<!-- FULL-SCREEN RENDER -->
+<section class="full" id="full1">
+  <div class="full-frame"><img src="assets/img/hf-12-upper-terrace.jpg" alt="Upper terrace with the timber shade and dining set" width="1536" height="1024" loading="lazy"></div>
+  <div class="full-cap wrap"><p class="kicker" data-i18n="full.1k">Golden hour on the terrace</p><h2 class="h-1" data-i18n="full.1t">Sell the evening, not the square metres.</h2></div>
+</section>
+
+<!-- PINK BREAK: same camera, line drawing vs render -->
+<section class="break">
+  <div class="wrap break-grid">
+    <div class="break-copy">
+      <p class="kicker" style="color:var(--ink)" data-i18n="brk.k">The standard</p>
+      <h2 class="h-display" style="margin-top:20px" data-i18n="brk.t">Model-true.</h2>
+      <p class="lede" data-i18n="brk.b">Every image starts from one dimension-true 3D model. What you sell is exactly what gets built: no surprises at handover, no awkward conversations.</p>
+      <p class="break-note" data-i18n="brk.note">Same Blender camera, two outputs: gray clay and high fidelity. Drag to compare.</p>
+    </div>
+    <figure class="mt-split" id="mtSplit" style="--s:50%">
+      <img src="assets/img/clay-01-open-plan.jpg" alt="Open-plan living and dining as a neutral gray clay render" width="1920" height="1280" loading="lazy">
+      <div class="mt-top"><img src="assets/img/hf-01-open-plan.jpg" alt="The same view as a finished photographic image" width="1536" height="1024" loading="lazy"></div>
+      <div class="mt-handle" role="slider" tabindex="0" aria-label="Compare gray clay and high-fidelity image" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span></span></div>
+      <span class="mt-lab l" data-i18n="brk.lw">Gray clay</span>
+      <span class="mt-lab r" data-i18n="brk.hf">High fidelity</span>
+    </figure>
+  </div>
+</section>
+
+<!-- CLAY → FINISHED -->
+<section class="wipe-sec" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="kicker" data-i18n="wipe.k">06 · From clay to finished</p><h2 class="h-1" style="margin-top:16px" data-i18n="wipe.t">From clay to curb appeal.</h2></div>
+      <p class="lede" data-i18n="wipe.b">Materials, light and landscape layered onto the same geometry. Scroll to reveal the finished view.</p>
+    </div>
+    <div class="wipe" id="wipe">
+      <img src="assets/img/clay-11-deck-exterior.jpg" alt="Front exterior as a neutral gray clay render" width="1920" height="1280">
+      <div class="top"><img src="assets/img/hf-11-deck-exterior.jpg" alt="The same front view as a high-fidelity image" width="1536" height="1024"></div>
+      <div class="bar"></div>
+      <span class="tagpill l" data-i18n="wipe.clay">Gray clay</span>
+      <span class="tagpill r" data-i18n="wipe.fin">High fidelity</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXTERIOR GALLERY -->
+<section class="hgal" id="hgal">
+  <div class="hgal-in">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0">
+        <div><p class="kicker" data-i18n="gal.k">07 · Lifestyle</p><h2 class="h-1" style="margin-top:16px" data-i18n="gal.t">Show the life, not just the layout.</h2></div>
+        <p class="lede" data-i18n="gal.b">Lived-in scenes from model cameras at eye height. The rooms buyers fall for are the rooms they get.</p>
+      </div>
+    </div>
+    <div class="hgal-track">
+      <figure><img src="assets/img/hf-14-living-people.jpg" alt="Living room in use, afternoon light" width="1536" height="1024" loading="lazy"><figcaption><span data-i18n="gal.1">Living, lived in</span><span>01</span></figcaption></figure>
+      <figure><img src="assets/img/hf-15-dining-people.jpg" alt="Coffee at the dining table" width="1536" height="1024" loading="lazy"><figcaption><span data-i18n="gal.3">Dining</span><span>02</span></figcaption></figure>
+      <figure><img src="assets/img/hf-06-stair.jpg" alt="Return stair and the red container doors" width="1536" height="1024" loading="lazy"><figcaption><span data-i18n="gal.4">Return stair</span><span>03</span></figcaption></figure>
+      <figure><img src="assets/img/hf-07-main-bedroom.jpg" alt="Main bedroom with west glass" width="1536" height="1024" loading="lazy"><figcaption><span data-i18n="gal.6">Main bedroom</span><span>04</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ROOM BY ROOM: full-screen sequence -->
+<section class="rooms" id="rooms">
+  <div class="rooms-overlay">
+    <div class="wrap rooms-ov-in">
+      <div class="rooms-copy">
+        <p class="kicker" data-i18n="rooms.k">08 · Room by room</p>
+        <h2 class="h-1" data-i18n="rooms.t">Walk through it before it's built.</h2>
+        <p class="lede" data-i18n="rooms.b">True room sizes, real furniture at scale. Every room ready for your listing, brochure and social feed.</p>
+      </div>
+      <div class="rooms-meta"><div class="room-count">01 / 11</div><div class="room-name"></div></div>
+    </div>
+    <div class="wrap"><div class="rooms-progress" aria-hidden="true"></div></div>
+  </div>
+  <div class="rooms-stage">
+    <figure class="room"><img src="assets/img/hf-05-entry.jpg" alt="Entry and reading corner" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.1">Entry</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-13-reading-people.jpg" alt="Reading corner by the glass" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.11">Reading corner</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-01-open-plan.jpg" alt="Open-plan ground floor" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.2">Open plan</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-02-living.jpg" alt="Living room toward the garden" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.3">Living</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-03-dining.jpg" alt="Dining and kitchen" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.4">Dining</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-04-kitchen.jpg" alt="Kitchen run and window" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.5">Kitchen</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-06-stair.jpg" alt="Stair with wall lighting" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.6">Stair</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-10-gallery.jpg" alt="Upper gallery and landing" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.7">Upper gallery</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-07-main-bedroom.jpg" alt="Main bedroom with west glass" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.8">Main bedroom</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-09-ensuite.jpg" alt="Ensuite with checker floor" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.9">Ensuite</figcaption></figure>
+    <figure class="room"><img src="assets/img/hf-08-guest-studio.jpg" alt="Guest bedroom and studio" width="1536" height="1024" decoding="async"><figcaption data-i18n="room.10">Studio</figcaption></figure>
+  </div>
+</section>
+
+<!-- FULL-SCREEN RENDER -->
+<section class="full" id="full2">
+  <div class="full-frame"><img src="assets/img/hf-02-living.jpg" alt="Living room toward the garden glass" width="1536" height="1024" loading="lazy"></div>
+  <div class="full-cap wrap"><p class="kicker" data-i18n="full.2k">Living room</p><h2 class="h-1" data-i18n="full.2t">Light, space, and every beam in its place.</h2></div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="sec" id="for">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><p class="kicker" data-i18n="for.k">Who it's for</p><h2 class="h-1" style="margin-top:16px" data-i18n="for.t">Made for the people who sell houses.</h2></div>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal><h3 class="h-3" data-i18n="for.1t">Distributors and manufacturers</h3><ul>
+        <li data-i18n="for.1a">A catalogue that sells every model and layout</li>
+        <li data-i18n="for.1b">An interactive 3D showroom on your website</li>
+        <li data-i18n="for.1c">Assembly films that make modular feel simple</li></ul></div>
+      <div class="card" data-reveal><h3 class="h-3" data-i18n="for.2t">Contractors and builders</h3><ul>
+        <li data-i18n="for.2a">Win approvals faster with clear, accurate visuals</li>
+        <li data-i18n="for.2b">Drawings, sections and isometrics that match the model</li>
+        <li data-i18n="for.2c">Fewer change orders: clients sign off on what they see</li></ul></div>
+      <div class="card" data-reveal><h3 class="h-3" data-i18n="for.3t">Real estate and developers</h3><ul>
+        <li data-i18n="for.3a">Pre-sell off-plan with photoreal day and dusk images</li>
+        <li data-i18n="for.3b">Furnished interiors that justify the price</li>
+        <li data-i18n="for.3c">Walkthrough films for listings and social</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTPUTS -->
+<section class="sec" id="outputs" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><p class="kicker" data-i18n="out.k">Deliverables</p><h2 class="h-1" style="margin-top:16px" data-i18n="out.t">Every asset your sales team needs.</h2></div>
+      <p class="lede" data-i18n="out.b">Order one, or the whole set. All cut from the same model, so they always agree.</p>
+    </div>
+    <div class="grid-outputs" data-reveal>
+      <div class="out"><span class="num">01</span><h3 class="h-3" data-i18n="out.1t">Drawings</h3><p class="body" data-i18n="out.1b">Plans, elevations, sections and module assembly, to scale and ready for approvals.</p><span class="fmt">PDF · A3 / A1</span></div>
+      <div class="out"><span class="num">02</span><h3 class="h-3" data-i18n="out.2t">Exterior images</h3><p class="body" data-i18n="out.2b">Day, golden hour and dusk, on your site or a neutral one.</p><span class="fmt">JPG / PNG · up to 4K</span></div>
+      <div class="out"><span class="num">03</span><h3 class="h-3" data-i18n="out.3t">Interior images</h3><p class="body" data-i18n="out.3b">Furnished rooms at true scale, styled to your buyer.</p><span class="fmt">JPG / PNG · up to 4K</span></div>
+      <div class="out"><span class="num">04</span><h3 class="h-3" data-i18n="out.4t">Interactive 3D</h3><p class="body" data-i18n="out.4b">The live model above, branded for your website and sales meetings.</p><span class="fmt">Web · embeddable</span></div>
+      <div class="out"><span class="num">05</span><h3 class="h-3" data-i18n="out.5t">Assembly film</h3><p class="body" data-i18n="out.5b">Piers to roof in one film: the clearest way to sell modular.</p><span class="fmt">MP4 · 16:9 + 9:16</span></div>
+      <div class="out"><span class="num">06</span><h3 class="h-3" data-i18n="out.6t">Walkthrough film</h3><p class="body" data-i18n="out.6b">An eye-level camera path through every room.</p><span class="fmt">MP4 · Full HD / 4K · 16:9 + 9:16</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec how" id="how" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><p class="kicker" data-i18n="how.k">How it works</p><h2 class="h-1" style="margin-top:16px" data-i18n="how.t">From plans to launch in four steps.</h2></div>
+    </div>
+    <ol data-reveal>
+      <li><h3 class="h-3" data-i18n="how.1t">Send your plans</h3><p class="body" data-i18n="how.1b">PDF, DWG or a dimensioned sketch. That's all we need to start.</p></li>
+      <li><h3 class="h-3" data-i18n="how.2t">Fixed scope and quote</h3><p class="body" data-i18n="how.2b">You choose the package; we fix the price and the dates.</p></li>
+      <li><h3 class="h-3" data-i18n="how.3t">Approve the model</h3><p class="body" data-i18n="how.3b">Check every dimension before a single image is made.</p></li>
+      <li><h3 class="h-3" data-i18n="how.4t">Launch</h3><p class="body" data-i18n="how.4b">Images, films and web files, sized for every channel.</p></li>
+    </ol>
+  </div>
+</section>
+<!-- PACKAGES: the proposal -->
+<section class="sec packages" id="packages">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div><p class="kicker" data-i18n="pk.k">Packages</p><h2 class="h-1" style="margin-top:16px" data-i18n="pk.t">Choose your launch.</h2></div>
+      <p class="lede" data-i18n="pk.b">Three ways to start. Every package is built on one model, so you can upgrade any time without paying for the model twice.</p>
+    </div>
+    <div class="pkg-grid">
+      <article class="pkg" data-reveal>
+        <p class="pkg-tier">01</p>
+        <h3 class="pkg-name" data-i18n="pk.1n">Listing</h3>
+        <p class="pkg-for" data-i18n="pk.1f">For one house, one listing.</p>
+        <ul class="pkg-list">
+          <li data-i18n="pk.1a">Dimension-true 3D model from your plans</li>
+          <li data-i18n="pk.1b">4 exterior images, day and dusk</li>
+          <li data-i18n="pk.1c">4 furnished interior images</li>
+          <li data-i18n="pk.1d">Social crops: 1:1, 4:5 and 9:16</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:bzik.david@gmail.com?subject=Listing%20package"><span data-i18n="pk.cta">Request a quote</span> <span class="arr">→</span></a>
+      </article>
+      <article class="pkg pkg-feat" data-reveal>
+        <span class="pkg-badge" data-i18n="pk.badge">Most chosen</span><p class="pkg-tier">02</p>
+        <h3 class="pkg-name" data-i18n="pk.2n">Launch</h3>
+        <p class="pkg-for" data-i18n="pk.2f">For a new model or a project launch.</p>
+        <ul class="pkg-list">
+          <li data-i18n="pk.2a">Everything in Listing</li>
+          <li data-i18n="pk.2b">10 interiors, room by room</li>
+          <li data-i18n="pk.2c">Walkthrough film, 16:9 and 9:16</li>
+          <li data-i18n="pk.2d">Assembly film, piers to roof</li>
+          <li data-i18n="pk.2e">Coordinated drawing set</li>
+        </ul>
+        <a class="btn" href="mailto:bzik.david@gmail.com?subject=Launch%20package"><span data-i18n="pk.cta">Request a quote</span> <span class="arr">→</span></a>
+      </article>
+      <article class="pkg" data-reveal>
+        <p class="pkg-tier">03</p>
+        <h3 class="pkg-name" data-i18n="pk.3n">Showroom</h3>
+        <p class="pkg-for" data-i18n="pk.3f">For distributors selling a whole range.</p>
+        <ul class="pkg-list">
+          <li data-i18n="pk.3a">Everything in Launch</li>
+          <li data-i18n="pk.3b">Interactive 3D viewer, branded for your website</li>
+          <li data-i18n="pk.3c">Lifestyle scenes and clay-to-reality comparisons</li>
+          <li data-i18n="pk.3d">Layout options across your model range</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:bzik.david@gmail.com?subject=Showroom%20package"><span data-i18n="pk.cta">Request a quote</span> <span class="arr">→</span></a>
+      </article>
+    </div>
+    <p class="pkg-note" data-i18n="pk.note">Fixed scope and dates, agreed before we start. Need something different? Every package can be tailored.</p>
+  </div>
+</section>
+</main>
+
+<!-- CLOSER: full-screen image (swap for a film: see comment) -->
+<section class="closer" id="contact">
+  <div class="closer-media">
+    <!-- To use a film, replace this img with:
+         <video src="assets/video/closing.mp4" poster="assets/img/hf-16-terrace-people.jpg" autoplay muted loop playsinline></video> -->
+    <img src="assets/img/hf-16-terrace-people.jpg" alt="Evening on the roof terrace of the container house" width="1536" height="1024" loading="lazy">
+  </div>
+  <div class="closer-overlay">
+    <div class="wrap">
+      <p class="kicker" data-i18n="ct.k">Let's build your launch</p>
+      <h2 class="h-display" data-i18n="ct.t">Your next house can sell itself.</h2>
+      <p class="lede" data-i18n="ct.b">Send the plans today. You'll get a fixed scope, a quote and a model to approve, then every image, film and 3D view your sales team needs.</p>
+      <div class="contact-row">
+        <a class="btn magnet" href="mailto:bzik.david@gmail.com?subject=Container%20house%20project"><span data-i18n="cta.send">Book a project call</span> <span class="arr">→</span></a>
+        <a class="contact-mail" href="mailto:bzik.david@gmail.com">bzik.david@gmail.com</a>
+      </div>
+      <ul class="trust">
+        <li data-i18n="ct.t1">Built from your drawings</li><li data-i18n="ct.t2">One model, every output</li><li data-i18n="ct.t3">Fixed scope and dates</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer class="site-foot">
+  <div class="wrap foot">
+      <a class="logo" href="#top" aria-label="BZIK"><svg aria-hidden="true" focusable="false" viewBox="0 0 1566 595" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M434.033 56.2707C457.583 78.0207 474.083 104.871 476.033 137.271C476.933 171.621 464.333 199.671 441.083 224.421C431.183 234.621 420.233 242.871 408.233 250.671C406.733 251.571 405.383 252.471 403.883 253.521C391.433 261.171 378.233 266.421 364.733 271.671C365.333 271.671 365.333 271.671 368.183 271.821C416.333 274.521 462.383 281.571 498.233 316.671C517.733 338.571 526.733 364.821 525.833 393.921C522.833 440.721 494.483 479.871 460.733 510.171C445.883 522.771 429.833 533.571 412.733 543.171C412.133 543.471 412.133 543.471 409.283 545.121C349.883 578.421 281.033 594.771 213.083 594.621C208.583 594.621 204.083 594.621 199.583 594.621C172.733 594.771 146.033 592.371 119.933 585.621C118.433 585.171 117.083 584.871 115.583 584.421C83.3328 575.721 55.2827 562.371 31.7327 538.671C30.6828 537.621 29.4828 536.421 28.4328 535.371C11.6328 518.121 1.88275 493.371 0.232749 469.671C0.232749 468.471 0.0827853 467.271 0.0827853 466.071C-1.41721 426.621 17.6328 391.221 43.7327 363.171C44.4827 362.421 45.2327 361.521 45.9827 360.771C57.9827 347.871 71.1828 336.921 85.7328 327.171C90.0828 327.321 91.7328 328.671 95.0328 331.521C107.633 345.471 124.283 364.221 129.233 382.671C127.433 388.221 123.233 392.271 119.333 396.621C104.483 413.871 93.3828 435.471 94.2828 458.871C96.3828 474.321 102.983 487.221 115.133 497.121C135.833 511.371 162.983 516.171 187.583 516.471C188.783 516.471 189.833 516.471 191.033 516.471C218.483 516.771 244.733 515.571 271.733 510.171C273.383 509.721 275.033 509.421 276.683 509.121C321.683 499.671 363.983 483.171 399.233 453.171C400.133 452.421 401.033 451.521 402.083 450.771C413.933 439.971 424.283 423.921 427.733 408.171C428.033 406.971 428.333 405.771 428.633 404.571C431.783 386.121 428.183 370.221 418.283 354.621C402.983 333.171 378.383 324.171 353.483 318.921C309.233 311.571 264.983 319.671 222.833 333.621C219.233 334.671 219.233 334.671 214.733 334.671C213.833 332.871 213.083 331.071 212.183 329.271C203.783 312.921 194.483 297.771 183.533 283.071C181.883 280.821 180.233 278.421 178.733 276.171C196.433 268.221 214.433 261.021 232.583 254.121C252.383 246.621 272.033 238.821 291.233 229.671C291.833 229.371 291.833 229.371 294.533 228.021C308.183 221.571 321.083 214.521 333.233 205.671C333.983 205.071 333.983 205.071 337.583 202.521C354.533 189.471 367.133 172.971 370.733 151.671C371.783 136.521 368.033 123.621 358.883 111.621C339.533 89.7207 309.833 81.9207 281.633 79.9707C231.983 77.5707 181.433 88.8207 142.733 121.671C128.333 134.871 118.283 153.771 116.933 173.421C115.133 215.871 140.783 249.621 166.733 280.671C205.583 327.321 222.833 378.921 219.233 439.671C217.133 459.771 212.333 484.221 198.233 499.671C189.833 505.371 183.233 506.421 173.333 504.921C172.133 504.771 170.933 504.621 169.733 504.471C141.983 500.421 141.983 500.421 136.733 495.171C135.683 485.421 137.633 477.471 141.083 468.471C153.083 434.271 150.533 401.121 135.083 368.571C122.633 343.971 103.583 323.721 84.0828 304.521C75.9828 296.571 68.6328 288.171 61.7328 279.171C61.1328 278.271 60.5328 277.521 59.9328 276.771C34.1328 243.171 19.5828 202.971 24.9827 160.071C31.1327 118.521 56.0328 82.9707 89.3328 58.0707C105.233 46.3707 121.883 36.9207 139.733 28.6707C141.383 27.7707 143.183 27.0207 144.833 26.1207C234.533 -14.3793 357.833 -10.3293 434.033 56.2707Z" fill="currentColor"/>
+<path d="M1539.23 39.1707C1549.28 49.3707 1555.13 62.4207 1555.88 76.6707C1554.83 110.571 1532.33 138.321 1509.68 161.571C1508.03 163.371 1506.38 165.171 1504.58 166.971C1496.48 175.671 1487.03 182.871 1477.58 190.071C1475.63 191.421 1473.83 192.921 1472.03 194.271C1458.23 204.921 1444.13 213.621 1428.68 221.871C1425.38 223.671 1422.08 225.471 1418.63 227.271C1397.93 238.821 1376.33 247.971 1354.58 257.421C1287.08 286.371 1287.08 286.371 1276.58 306.771C1274.48 314.871 1274.63 321.171 1278.08 328.671C1297.28 358.521 1347.83 367.521 1379.18 377.871C1446.23 399.921 1515.98 424.671 1551.68 490.071C1561.88 510.621 1569.83 533.571 1562.33 556.371C1557.53 568.071 1548.83 577.671 1537.73 583.671C1524.53 588.771 1511.63 587.421 1498.73 582.171C1481.03 573.471 1467.68 561.171 1455.23 546.171C1453.88 544.671 1452.53 543.021 1451.33 541.521C1450.58 540.621 1449.83 539.871 1449.23 538.971C1448.48 538.071 1447.73 537.321 1446.98 536.421C1445.48 534.771 1444.13 532.971 1442.63 531.321C1442.03 530.571 1441.28 529.671 1440.53 528.921C1439.03 526.971 1437.53 525.171 1436.03 523.371C1406.93 489.471 1370.03 464.871 1330.73 444.171C1329.23 443.421 1327.73 442.521 1326.23 441.771C1308.38 432.321 1290.53 423.171 1272.23 414.621C1195.88 378.621 1195.88 378.621 1182.23 342.171C1177.13 326.421 1178.78 310.821 1185.68 295.821C1204.28 262.221 1238.63 241.671 1269.83 221.571C1278.83 215.871 1287.68 209.871 1296.53 204.021C1298.33 202.971 1299.98 201.771 1301.78 200.571C1326.53 184.221 1349.63 166.071 1371.23 145.671C1372.13 144.771 1373.18 143.871 1374.08 142.971C1390.73 127.221 1403.63 107.121 1416.08 88.0707C1424.48 75.1707 1433.03 62.7207 1443.23 51.1707C1443.68 50.7207 1443.68 50.7207 1445.78 48.1707C1471.28 20.8707 1509.68 15.9207 1539.23 39.1707Z" fill="currentColor"/>
+<path d="M910.883 70.8207C922.733 81.9207 932.633 96.7707 936.233 112.671C936.383 113.271 936.383 113.271 936.983 116.121C941.783 145.221 932.483 171.171 915.983 194.721C902.483 212.871 885.983 229.071 868.283 243.021C864.533 246.021 860.783 249.021 857.033 252.321C847.583 260.421 837.833 268.071 827.933 275.571C822.683 279.621 817.283 283.821 812.033 288.021C803.183 294.771 794.333 301.671 785.483 308.421C772.133 318.621 758.933 328.971 745.733 339.171C744.683 339.921 743.783 340.671 742.733 341.571C726.233 354.471 710.033 367.671 693.983 381.321C690.983 383.871 687.983 386.271 684.983 388.671C674.633 397.071 665.033 405.771 655.583 415.221C654.833 415.971 654.233 416.721 653.483 417.471C619.133 451.971 619.133 451.971 618.983 475.221C619.283 483.021 620.033 487.821 625.733 493.671C637.883 504.321 655.733 505.071 671.183 504.921C672.833 504.921 674.483 504.921 676.283 504.921C731.333 503.721 785.033 481.971 836.033 462.921C865.283 452.121 894.683 444.321 924.533 457.221C933.233 461.871 938.783 469.371 943.583 477.621C946.583 488.271 946.733 497.571 942.083 507.621C931.583 525.921 914.183 534.471 894.833 540.771C893.483 541.221 891.983 541.671 890.633 542.121C875.783 546.921 860.783 550.821 845.783 554.571C844.283 554.871 842.933 555.321 841.433 555.621C815.633 561.921 789.833 567.471 763.733 571.671C762.083 571.971 760.583 572.271 759.083 572.421C689.633 583.221 602.783 589.971 542.633 546.771C529.583 536.121 520.883 520.671 517.733 504.171C513.833 467.421 530.783 437.271 552.983 409.371C557.033 404.571 561.083 399.921 565.283 395.271C568.133 392.271 570.833 389.121 573.533 386.121C579.233 379.671 585.083 373.671 591.083 367.671C592.133 366.621 593.033 365.571 594.083 364.521C600.083 358.671 606.083 352.971 612.533 347.571C615.833 344.721 619.133 341.721 622.433 338.721C627.683 333.921 632.933 329.421 638.333 325.071C644.033 320.421 649.583 315.621 654.983 310.671C661.583 304.671 668.333 298.971 675.233 293.271C680.183 289.221 685.133 285.171 689.933 280.971C696.833 274.971 703.883 269.121 711.083 263.571C719.633 256.971 727.883 249.921 736.133 242.721C741.683 237.921 747.233 233.271 752.933 228.621C759.533 223.221 765.833 217.671 772.133 211.821C775.283 209.121 778.433 206.421 781.583 203.721C782.483 202.821 783.383 201.921 784.433 201.171C786.983 198.921 789.383 196.671 791.933 194.571C806.333 181.971 822.383 166.521 825.683 147.021C826.283 139.371 824.183 134.871 819.233 129.171C804.533 115.671 779.183 117.771 760.583 118.521C709.883 121.371 661.583 137.121 613.583 152.571C611.783 153.321 609.833 153.921 607.883 154.521C604.433 155.571 600.983 156.771 597.533 157.821C572.183 166.221 541.733 174.771 516.383 162.021C506.633 155.871 500.483 148.371 497.333 137.271C495.383 126.171 498.083 116.121 504.233 106.671C539.333 58.5207 657.683 47.8707 713.033 38.7207C778.733 28.5207 856.883 25.9707 910.883 70.8207Z" fill="currentColor"/>
+<path d="M1049.93 49.2207C1061.78 57.7707 1067.63 68.7207 1071.23 82.6708C1072.13 88.9708 1072.13 95.1208 1072.13 101.571C1072.13 102.471 1072.13 102.471 1072.13 107.121C1072.13 112.071 1072.13 117.171 1072.13 122.121C1072.13 127.671 1072.13 133.071 1072.13 138.471C1072.13 149.121 1072.13 159.771 1072.13 170.421C1071.98 182.871 1072.13 195.171 1072.13 207.621C1072.13 229.821 1071.98 252.021 1071.98 274.071C1071.98 295.521 1071.98 316.971 1071.98 338.421C1071.98 361.821 1071.98 385.371 1071.98 408.771C1071.98 411.171 1071.98 413.721 1071.98 416.121C1071.98 417.471 1071.98 418.671 1071.98 419.871C1071.98 428.571 1071.98 437.121 1071.98 445.821C1071.98 456.321 1071.98 466.821 1071.98 477.471C1071.98 482.871 1071.98 488.121 1071.98 493.521C1071.98 499.371 1071.98 505.221 1071.83 511.071C1071.83 512.721 1071.98 514.371 1071.98 516.171C1071.83 534.321 1067.03 547.521 1054.73 561.171C1042.88 571.821 1028.63 575.721 1012.88 575.121C997.133 573.471 985.733 567.171 975.233 555.171C972.683 551.271 970.733 547.671 969.233 543.171C968.783 541.821 968.333 540.321 967.733 538.821C965.483 530.871 965.933 522.921 965.933 514.671C965.933 512.871 965.933 511.071 965.933 509.121C965.933 504.171 965.933 499.221 965.933 494.121C965.933 488.721 965.933 483.321 965.933 477.921C965.933 467.271 965.933 456.771 965.933 446.121C965.933 437.571 965.933 428.871 965.783 420.321C965.783 419.721 965.783 419.721 965.783 416.571C965.783 414.021 965.783 411.621 965.783 409.071C965.783 385.821 965.783 362.421 965.783 339.021C965.783 317.721 965.783 296.271 965.783 274.971C965.783 253.071 965.783 231.021 965.783 209.121C965.783 196.821 965.783 184.521 965.783 172.221C965.783 161.721 965.783 151.221 965.783 140.721C965.783 135.321 965.783 130.071 965.783 124.671C965.783 118.821 965.783 113.121 965.783 107.271C965.783 105.621 965.783 103.971 965.783 102.171C965.783 86.5707 969.233 74.4207 978.233 61.6707C979.133 60.4707 980.033 59.1208 980.783 57.7708C999.533 38.5708 1027.43 35.4207 1049.93 49.2207Z" fill="currentColor"/>
+<path d="M1203.53 47.1207C1215.68 55.6707 1222.88 65.4207 1227.23 79.6707C1228.13 85.0707 1228.13 90.1707 1228.28 95.5707C1228.28 97.0707 1228.28 98.7207 1228.28 100.221C1228.43 105.171 1228.43 110.121 1228.58 115.071C1228.58 115.971 1228.58 115.971 1228.58 120.321C1228.73 129.321 1228.73 138.321 1228.73 147.321C1228.88 156.621 1229.03 165.921 1229.18 175.071C1229.33 182.271 1229.33 189.471 1229.33 196.671C1229.33 200.121 1229.33 203.421 1229.48 206.871C1230.23 234.921 1230.23 234.921 1223.03 242.571C1218.23 246.471 1213.13 249.321 1207.73 252.171C1188.38 267.021 1174.58 286.971 1168.73 310.671C1166.78 334.971 1172.33 354.771 1188.23 373.671C1197.83 384.021 1210.28 393.621 1222.88 400.071C1227.23 403.671 1227.23 403.671 1228.43 409.071C1228.43 411.321 1228.43 413.571 1228.43 415.821C1228.43 417.021 1228.43 418.221 1228.43 419.421C1228.43 423.471 1228.43 427.521 1228.28 431.571C1228.28 434.421 1228.28 437.271 1228.28 439.971C1228.28 445.971 1228.28 451.821 1228.28 457.671C1228.13 465.171 1228.13 472.821 1228.13 480.321C1228.13 486.021 1228.13 491.871 1228.13 497.721C1228.13 500.421 1228.13 503.271 1228.13 505.971C1228.13 527.421 1226.48 545.271 1210.73 561.171C1198.43 571.671 1184.78 575.721 1168.73 575.271C1153.28 573.471 1140.53 565.971 1130.78 553.971C1122.08 542.721 1121.63 529.371 1121.63 515.721C1121.63 514.671 1121.63 514.671 1121.63 510.021C1121.63 505.071 1121.63 499.971 1121.63 495.021C1121.63 489.471 1121.63 484.071 1121.63 478.521C1121.63 467.871 1121.63 457.221 1121.63 446.571C1121.63 437.871 1121.63 429.171 1121.63 420.471C1121.63 419.271 1121.63 417.921 1121.63 416.721C1121.63 414.171 1121.63 411.621 1121.63 409.071C1121.63 385.521 1121.63 361.971 1121.63 338.421C1121.63 316.821 1121.63 295.371 1121.48 273.771C1121.48 251.571 1121.48 229.521 1121.48 207.321C1121.48 194.871 1121.48 182.571 1121.48 170.121C1121.48 159.471 1121.48 148.971 1121.48 138.321C1121.48 132.921 1121.48 127.521 1121.48 122.121C1121.48 116.271 1121.48 110.421 1121.48 104.571C1121.48 102.921 1121.48 101.271 1121.48 99.4707C1121.63 82.2207 1126.73 68.2707 1138.73 55.6707C1155.83 39.1707 1182.83 34.9707 1203.53 47.1207Z" fill="currentColor"/>
+</svg></a>
+      <span>David Budzik · BZIK · © 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="406.0mm" height="287.1mm" viewBox="12.00 -27.68 406.00 287.10"><defs>
+<pattern id="ins" width="1.4" height="1.4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.4" stroke="#7a7a7a" stroke-width="0.12" /></pattern>
+<pattern id="ground" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#555" stroke-width="0.14" /></pattern>
+<pattern id="mesh" width="0.8" height="0.8" patternUnits="userSpaceOnUse"><path d="M0 0 L0.8 0.8 M0.8 0 L0 0.8" stroke="#2a2a2a" stroke-width="0.07" /></pattern>
+<pattern id="gravel" width="3" height="3" patternUnits="userSpaceOnUse"><circle cx="0.6" cy="0.8" r="0.17" fill="#a3a3a3" /><circle cx="2.1" cy="2.2" r="0.14" fill="#b3b3b3" /><circle cx="2.4" cy="0.6" r="0.11" fill="#b3b3b3" /><circle cx="1.1" cy="2.3" r="0.1" fill="#bbb" /></pattern>
+<pattern id="conc" width="2.2" height="2.2" patternUnits="userSpaceOnUse"><circle cx="0.5" cy="0.6" r="0.12" fill="#777" /><circle cx="1.6" cy="1.5" r="0.09" fill="#888" /><path d="M1.4 0.3 l0.3 0.25 l-0.35 0.1z" fill="#999" /></pattern>
+<pattern id="screed" width="2.4" height="2.4" patternUnits="userSpaceOnUse"><circle cx="0.6" cy="0.6" r="0.08" fill="#888" /><circle cx="1.8" cy="1.7" r="0.08" fill="#888" /></pattern>
+<pattern id="lawn" width="2.4" height="2.4" patternUnits="userSpaceOnUse"><path d="M0.4 1.2 l0.15 -0.4 M1.6 2.0 l0.15 -0.4 M1.8 0.6 l0.12 -0.35" stroke="#8fa77f" stroke-width="0.12" /></pattern>
+</defs>
+<rect x="12.00" y="-27.68" width="406.00" height="287.10" fill="#ffffff" /><text x="20.00" y="22.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">ROOM SCHEDULE</text>
+<rect x="20.00" y="26.60" width="185.00" height="4.60" rx="0" fill="#ececec" stroke="none" stroke-width="0.15" />
+<text x="21.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">ROOM</text>
+<text x="51.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">LEVEL</text>
+<text x="61.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">MOD.</text>
+<text x="74.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">NET M²</text>
+<text x="86.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">FLOOR</text>
+<text x="108.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">NOTES</text>
+<line x1="20.00" y1="32.20" x2="205.00" y2="32.20" stroke="#141414" stroke-width="0.15" stroke-linecap="butt" />
+<text x="21.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Living</text>
+<text x="51.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF</text>
+<text x="61.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C1–C3</text>
+<text x="74.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">28.4</text>
+<text x="86.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">microcement</text>
+<text x="108.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">W02 west glass, W01 to deck; green velvet sofa, jute rug</text>
+<line x1="20.00" y1="36.89" x2="205.00" y2="36.89" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Kitchen</text>
+<text x="51.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF</text>
+<text x="61.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C1</text>
+<text x="74.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">7.8</text>
+<text x="86.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">microcement</text>
+<text x="108.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">north run + tall oak unit; W07 ribbon; table is the island</text>
+<line x1="20.00" y1="41.57" x2="205.00" y2="41.57" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Dining</text>
+<text x="51.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF</text>
+<text x="61.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C2–C3</text>
+<text x="74.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">18.9</text>
+<text x="86.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">microcement</text>
+<text x="108.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">table for 8, brass multi-arm pendant, Persian runner</text>
+<line x1="20.00" y1="46.26" x2="205.00" y2="46.26" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Entry hall</text>
+<text x="51.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF</text>
+<text x="61.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C2–C3</text>
+<text x="74.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">18.2</text>
+<text x="86.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">microcement</text>
+<text x="108.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">D01 pivot door; W09 east glass (added); console + reading chair</text>
+<line x1="20.00" y1="50.94" x2="205.00" y2="50.94" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">WC + laundry</text>
+<text x="51.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF</text>
+<text x="61.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C1</text>
+<text x="74.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">3.7</text>
+<text x="86.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">checker tile</text>
+<text x="108.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">internal — mech. extract, borrowed light (ADR-002); stacked W/D</text>
+<line x1="20.00" y1="55.63" x2="205.00" y2="55.63" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Stair + landing</text>
+<text x="51.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF–UF</text>
+<text x="61.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C1</text>
+<text x="74.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">—</text>
+<text x="86.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">walnut treads</text>
+<text x="108.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">17R ≈171 / 16G 225, rises west; foot faces D02</text>
+<line x1="20.00" y1="60.31" x2="205.00" y2="60.31" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Main bedroom</text>
+<text x="51.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C4–C5</text>
+<text x="74.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">18.3</text>
+<text x="86.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">oak</text>
+<text x="108.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">W03 west glass + screens; W04 to terrace</text>
+<line x1="20.00" y1="65.00" x2="205.00" y2="65.00" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Ensuite</text>
+<text x="51.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C4</text>
+<text x="74.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">4.1</text>
+<text x="86.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">checker tile</text>
+<text x="108.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">walk-in shower; brief 5.0 m² (ADR-001)</text>
+<line x1="20.00" y1="69.68" x2="205.00" y2="69.68" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Walk-in wardrobe</text>
+<text x="51.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C5</text>
+<text x="74.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.1</text>
+<text x="86.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">oak</text>
+<text x="108.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">off main bedroom; brief 3.0 m² (ADR-001)</text>
+<line x1="20.00" y1="74.37" x2="205.00" y2="74.37" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Family bathroom</text>
+<text x="51.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C5</text>
+<text x="74.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">3.6</text>
+<text x="86.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">checker tile</text>
+<text x="108.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">shower, WC, vanity; door off landing; brief 4.5 m²</text>
+<line x1="20.00" y1="79.05" x2="205.00" y2="79.05" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Hall + landing + gallery</text>
+<text x="51.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C4–C5</text>
+<text x="74.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">≈8</text>
+<text x="86.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">oak</text>
+<text x="108.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">0.80 m hall to main bedroom (new); glass balustrade at void</text>
+<line x1="20.00" y1="83.74" x2="205.00" y2="83.74" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Bedroom 2 / studio</text>
+<text x="51.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C5</text>
+<text x="74.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">9.8</text>
+<text x="86.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">oak</text>
+<text x="108.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">W05 to terrace, W08 Juliet ledge east</text>
+<line x1="20.00" y1="88.42" x2="205.00" y2="88.42" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="21.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Roof terrace</text>
+<text x="51.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF</text>
+<text x="61.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">C3 roof</text>
+<text x="74.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">28.9</text>
+<text x="86.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">porcelain pavers</text>
+<text x="108.00" y="91.62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">mesh railing 1.10 m; shade sail; flush threshold</text>
+<line x1="20.00" y1="93.11" x2="205.00" y2="93.11" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="20.00" y="98.11" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#7d7d7d">Totals (gross): GF 89.2 m² · UF 59.5 m² · ≈148.7 m² + 29.7 m² terrace.  Net areas inside the linings, measured from these drawings.</text>
+<text x="222.00" y="22.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">DOOR + WINDOW SCHEDULE</text>
+<rect x="222.00" y="26.60" width="182.00" height="4.60" rx="0" fill="#ececec" stroke="none" stroke-width="0.15" />
+<text x="223.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">CODE</text>
+<text x="233.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">WHERE</text>
+<text x="267.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">TYPE</text>
+<text x="317.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">W × H M</text>
+<text x="339.00" y="30.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">NOTES</text>
+<line x1="222.00" y1="32.20" x2="404.00" y2="32.20" stroke="#141414" stroke-width="0.15" stroke-linecap="butt" />
+<text x="223.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W01</text>
+<text x="233.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF south ×2</text>
+<text x="267.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2-panel slim sliding glass wall</text>
+<text x="317.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">3.90 × 2.45</text>
+<text x="339.00" y="35.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">one steel post between; low-E solar</text>
+<line x1="222.00" y1="36.89" x2="404.00" y2="36.89" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W02</text>
+<text x="233.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF west ×3</text>
+<text x="267.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">full-height glazing, 1 bay sliding</text>
+<text x="317.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.25 × 2.45</text>
+<text x="339.00" y="40.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">corner posts read as mullions</text>
+<line x1="222.00" y1="41.57" x2="404.00" y2="41.57" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W03</text>
+<text x="233.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF west ×2</text>
+<text x="267.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">fixed full-height</text>
+<text x="317.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.25 × 2.45</text>
+<text x="339.00" y="44.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">external roller screen</text>
+<line x1="222.00" y1="46.26" x2="404.00" y2="46.26" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W04</text>
+<text x="233.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF south</text>
+<text x="267.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2-panel sliding door</text>
+<text x="317.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">3.00 × 2.45</text>
+<text x="339.00" y="49.46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">main bed → terrace, flush sill</text>
+<line x1="222.00" y1="50.94" x2="404.00" y2="50.94" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W05</text>
+<text x="233.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF south</text>
+<text x="267.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2-panel sliding door</text>
+<text x="317.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.40 × 2.45</text>
+<text x="339.00" y="54.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">bedroom 2 → terrace</text>
+<line x1="222.00" y1="55.63" x2="404.00" y2="55.63" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W06</text>
+<text x="233.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">North ×4</text>
+<text x="267.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">vertical slot, fixed/tilt</text>
+<text x="317.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">0.60 × 1.80</text>
+<text x="339.00" y="58.83" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">fluted glass in ensuite; stair, landing</text>
+<line x1="222.00" y1="60.31" x2="404.00" y2="60.31" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W07</text>
+<text x="233.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF north</text>
+<text x="267.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">horizontal ribbon</text>
+<text x="317.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.40 × 0.60</text>
+<text x="339.00" y="63.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">sill +1.10 above FFL</text>
+<line x1="222.00" y1="65.00" x2="404.00" y2="65.00" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W08</text>
+<text x="233.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">UF east</text>
+<text x="267.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">single glass door</text>
+<text x="317.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">1.20 × 2.45</text>
+<text x="339.00" y="68.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">0.6 m Juliet ledge, cable rail</text>
+<line x1="222.00" y1="69.68" x2="404.00" y2="69.68" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">W09</text>
+<text x="233.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF east (C3)</text>
+<text x="267.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">fixed full-height</text>
+<text x="317.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.19 × 2.45</text>
+<text x="339.00" y="72.88" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">ADDED — brief asks for glass on both ends</text>
+<line x1="222.00" y1="74.37" x2="404.00" y2="74.37" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">D01</text>
+<text x="233.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF east (C2)</text>
+<text x="267.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">flush pivot door + sidelight</text>
+<text x="317.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">1.20 × 2.40</text>
+<text x="339.00" y="77.57" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">+0.60 sidelight; charcoal steel</text>
+<line x1="222.00" y1="79.05" x2="404.00" y2="79.05" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">D02</text>
+<text x="233.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF east (C1)</text>
+<text x="267.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">original container doors, fixed</text>
+<text x="317.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">2.34 × 2.59</text>
+<text x="339.00" y="82.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">red, clear-coated; over-clad outside</text>
+<line x1="222.00" y1="83.74" x2="404.00" y2="83.74" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">D03</text>
+<text x="233.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">Interior</text>
+<text x="267.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">flush hidden-frame / pocket</text>
+<text x="317.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">0.85 × 2.40</text>
+<text x="339.00" y="86.94" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">pocket sliders 0.80 to wet rooms</text>
+<line x1="222.00" y1="88.42" x2="404.00" y2="88.42" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="222.00" y="150.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#7d7d7d">All frames matte black aluminium, RAL 9005 / 7021, sightline 20–35 mm, double glazed.</text>
+<text x="222.00" y="152.47" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#7d7d7d">South and west glass: low-E solar control. Linen sheers on ceiling tracks behind every</text>
+<text x="222.00" y="154.93" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#7d7d7d">glass wall.</text>
+<text x="222.00" y="170.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">FINISHES</text>
+<rect x="222.00" y="174.60" width="188.00" height="4.60" rx="0" fill="#ececec" stroke="none" stroke-width="0.15" />
+<text x="223.00" y="178.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">ELEMENT</text>
+<text x="259.00" y="178.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.2">FINISH</text>
+<line x1="222.00" y1="180.20" x2="410.00" y2="180.20" stroke="#141414" stroke-width="0.15" stroke-linecap="butt" />
+<text x="223.00" y="183.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Exterior walls</text>
+<text x="259.00" y="183.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">original corrugated steel, blasted, zinc-rich epoxy primer, matte charcoal RAL 7021/7016</text>
+<line x1="222.00" y1="184.88" x2="410.00" y2="184.88" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="188.08" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Pergola, trims</text>
+<text x="259.00" y="188.08" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">black steel RHS 100×100 posts, 150×50 beams, matte black powder coat</text>
+<line x1="222.00" y1="189.57" x2="410.00" y2="189.57" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="192.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Railings</text>
+<text x="259.00" y="192.77" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">black steel frame + black mesh, 1.05–1.10 m; Juliet: flat bar + stainless cables</text>
+<line x1="222.00" y1="194.25" x2="410.00" y2="194.25" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="197.45" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Floors</text>
+<text x="259.00" y="197.45" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">GF light grey microcement, matte sealer · UF engineered oak 180–220, natural oil</text>
+<line x1="222.00" y1="198.94" x2="410.00" y2="198.94" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="202.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Walls / ceilings</text>
+<text x="259.00" y="202.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">smooth white plaster on insulated lining; black seam beams left exposed</text>
+<line x1="222.00" y1="203.62" x2="410.00" y2="203.62" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="206.82" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Bathrooms</text>
+<text x="259.00" y="206.82" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">white gloss subway 75×150 straight bond, B/W checker 200×200, brass fittings</text>
+<line x1="222.00" y1="208.31" x2="410.00" y2="208.31" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+<text x="223.00" y="211.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="700" text-anchor="start" fill="#141414">Kitchen</text>
+<text x="259.00" y="211.51" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.65" font-weight="400" text-anchor="start" fill="#141414">handleless warm-grey lacquer, black quartz/compact top, oak tall unit</text>
+<line x1="222.00" y1="213.00" x2="410.00" y2="213.00" stroke="#c4c4c4" stroke-width="0.06" stroke-linecap="butt" />
+</svg>

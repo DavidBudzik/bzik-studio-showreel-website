@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Container House Process</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F0EDE5; --paper-2:#E6E2D8; --mineral:#C7C3B9;
+  --ink:#222523; --charcoal:#303332; --mute:#6E6F69;
+  --oak:#B28A5D; --brass:#A88C55; --red:#A84C3C; --glass:#9FB8C0;
+  --line:rgba(34,37,35,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#151716;color:var(--ink);font-family:Archivo,system-ui,sans-serif;overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+.stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform:translate(-50%,-50%) scale(var(--s,.5));transform-origin:center;background:var(--paper);overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.slide.active{opacity:1;visibility:visible}
+
+/* chrome */
+.chrome{position:absolute;left:0;right:0;top:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 72px;z-index:20;pointer-events:none;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.chrome .proj{font-weight:700}
+.chrome .sec{color:var(--mute)}
+.chrome.dark{color:var(--paper)} .chrome.dark .sec{color:rgba(240,237,229,.65)}
+.foot{position:absolute;left:72px;right:72px;bottom:30px;display:flex;align-items:center;gap:22px;z-index:20;font-size:14px;color:var(--mute)}
+.foot .bar{flex:1;height:2px;background:var(--line);position:relative}
+.foot .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);transition:width .45s}
+.foot .nav{display:flex;gap:6px;pointer-events:auto}
+.foot .nav button{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;font-size:18px}
+.foot .nav button:hover{background:var(--ink);color:var(--paper)}
+.foot.dark{color:rgba(240,237,229,.7)} .foot.dark .bar{background:rgba(240,237,229,.2)} .foot.dark .bar i{background:var(--paper)}
+.foot.dark .nav button{border-color:rgba(240,237,229,.3)}
+
+/* type */
+.kicker{font-family:"JetBrains Mono",monospace;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+h1{font-size:132px;line-height:.92;font-weight:800;letter-spacing:-.035em}
+h2{font-size:64px;line-height:1;font-weight:700;letter-spacing:-.025em}
+h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
+p.lede{font-size:26px;line-height:1.4;color:#3d403d;max-width:30ch}
+p{font-size:19px;line-height:1.5}
+.small{font-size:15px;line-height:1.5;color:var(--mute)}
+
+.pad{position:absolute;inset:110px 72px 100px}
+.num{font-family:"JetBrains Mono",monospace;font-size:15px;color:var(--mute)}
+
+/* cover */
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,19,.88) 0%,rgba(18,20,19,.55) 42%,rgba(18,20,19,0) 70%)}
+.cover .txt{position:absolute;left:72px;bottom:150px;color:var(--paper)}
+.cover .txt p{color:rgba(240,237,229,.8);font-size:26px;max-width:36ch;margin-top:30px}
+.cover .meta{display:flex;gap:40px;margin-top:44px;font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.06em;color:rgba(240,237,229,.7)}
+.cover .meta b{display:block;color:var(--paper);font-weight:500;font-size:20px;margin-top:6px}
+
+/* pipeline */
+.pipe{position:absolute;left:72px;right:72px;top:360px;display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.pipe button{text-align:left;display:flex;flex-direction:column;gap:14px;group:1}
+.pipe .th{aspect-ratio:4/3;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);position:relative}
+.pipe .th img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pipe button:hover .th img{transform:scale(1.05)}
+.pipe .step{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);padding-top:12px}
+.pipe .step span{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mute)}
+.pipe .arrow{position:absolute;right:-16px;top:50%;width:14px;height:14px;transform:translateY(-50%);z-index:2}
+.pipe p{font-size:16px;color:#4a4d4a}
+.tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border:1px solid currentColor;color:var(--mute)}
+.tag.live{color:var(--red)}
+
+/* drawings */
+.sheet-wrap{position:absolute;left:72px;top:120px;width:1180px;height:836px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;cursor:zoom-in}
+.sheet-wrap img{max-width:100%;max-height:100%;transition:transform .4s}
+.sheet-wrap.zoom{cursor:zoom-out} .sheet-wrap.zoom img{transform:scale(1.9)}
+.side{position:absolute;left:1300px;right:72px;top:120px;bottom:100px;display:flex;flex-direction:column;gap:22px}
+.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:auto}
+.sheets button{border:1px solid var(--line);background:#fff;padding:6px;text-align:left}
+.sheets button img{width:100%;aspect-ratio:1.414;object-fit:cover;display:block}
+.sheets button span{display:block;font-family:"JetBrains Mono",monospace;font-size:13px;padding:6px 2px 2px}
+.sheets button.on{outline:2px solid var(--red);outline-offset:-2px}
+.sheetlist{font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.75;color:#4a4d4a;columns:2;column-gap:20px}
+
+/* data rows */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts b{display:block;font-size:34px;font-weight:700;letter-spacing:-.02em}
+.facts span{font-size:14px;color:var(--mute)}
+
+/* plan→model */
+.split{position:absolute;left:72px;right:72px;top:250px;bottom:110px;display:grid;grid-template-columns:1fr 70px 1fr;align-items:center}
+.split figure{height:100%;display:flex;flex-direction:column;gap:12px}
+.split figure .im{flex:1;background:#fff;border:1px solid var(--line);overflow:hidden;display:grid;place-items:center}
+.split figure .im img{width:100%;height:100%;object-fit:cover}
+.split figure .im img.contain{object-fit:contain}
+figcaption{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mute);display:flex;justify-content:space-between}
+.split .mid{display:grid;place-items:center;font-size:40px;color:var(--red)}
+
+/* model slide */
+.model-hero{position:absolute;left:72px;top:120px;width:1160px;height:774px;overflow:hidden;border:1px solid var(--line)}
+.model-hero img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:opacity .6s}
+.wipe{position:absolute;inset:0;cursor:ew-resize}
+.wipe .top{position:absolute;inset:0;clip-path:inset(0 0 0 var(--w,50%))}
+.wipe .handle{position:absolute;top:0;bottom:0;left:var(--w,50%);width:2px;background:var(--paper);box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.wipe .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-size:20px;color:var(--ink)}
+.wipe .lab{position:absolute;bottom:16px;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:rgba(34,37,35,.8);color:var(--paper);padding:5px 9px}
+.pipeline-list{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:0}
+.pipeline-list li{counter-increment:s;padding:13px 0 13px 46px;border-bottom:1px solid var(--line);position:relative;font-size:17px;line-height:1.4}
+.pipeline-list li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--red)}
+.pipeline-list li b{font-weight:600}
+
+/* gallery */
+.gal-ext{position:absolute;left:72px;right:72px;top:250px;bottom:100px;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:12px}
+.gal-ext button:first-child{grid-row:span 2}
+.gal button{position:relative;overflow:hidden;background:var(--paper-2)}
+.gal button img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.gal button:hover img{transform:scale(1.04)}
+.gal button span{position:absolute;left:0;bottom:0;padding:8px 12px;background:rgba(34,37,35,.82);color:var(--paper);font-family:"JetBrains Mono",monospace;font-size:13px}
+.gal-int{position:absolute;left:72px;right:72px;top:250px;bottom:100px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr;gap:12px}
+.head{position:absolute;left:72px;right:72px;top:110px;display:flex;justify-content:space-between;align-items:flex-end;gap:60px}
+.head .r{max-width:640px;font-size:18px;line-height:1.5;color:#4a4d4a}
+
+/* video */
+.vid-dark{background:#191b1a;color:var(--paper)}
+.vid-dark .head .r{color:rgba(240,237,229,.72)}
+.vid-dark .small{color:rgba(240,237,229,.55)}
+.vidbox{position:absolute;left:72px;top:250px;width:1240px;height:698px;background:#000}
+.vidbox video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.vside{position:absolute;left:1350px;right:72px;top:250px;bottom:100px;display:flex;flex-direction:column;gap:18px}
+.chapters{list-style:none;display:flex;flex-direction:column}
+.chapters button{display:grid;grid-template-columns:62px 1fr;width:100%;text-align:left;padding:9px 0;border-bottom:1px solid rgba(240,237,229,.12);font-size:16px;color:rgba(240,237,229,.8)}
+.chapters button .mono{color:rgba(240,237,229,.45);font-size:14px;padding-top:2px}
+.chapters button.on{color:var(--paper)} .chapters button.on .mono{color:#e07c69}
+.chapters button:hover{color:var(--paper)}
+.note{border-left:2px solid var(--red);padding:4px 0 4px 16px;font-size:15px;line-height:1.5}
+.vid-dark .note{color:rgba(240,237,229,.7)}
+.bookends{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bookends img{width:100%;display:block;border:1px solid rgba(240,237,229,.15)}
+
+.seq{overflow:hidden;cursor:pointer}
+.seq img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.seq img.on{opacity:1;animation:kb 5s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+.seq-bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(240,237,229,.2);z-index:2}
+.seq-bar i{position:absolute;left:0;top:0;bottom:0;background:#e07c69}
+.seq-pp{position:absolute;right:14px;top:14px;z-index:2;background:rgba(25,27,26,.75);color:var(--paper);padding:6px 12px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+
+/* iso */
+.iso{background:#F4F2EC}
+.iso-canvas{position:absolute;left:0;top:0;width:1360px;height:1080px}
+.iso-canvas canvas{display:block}
+.iso-labels{position:absolute;inset:0;pointer-events:none}
+.lbl{position:absolute;transform:translate(-50%,-100%);font-family:"JetBrains Mono",monospace;font-size:13px;white-space:nowrap;color:var(--ink);padding-bottom:22px;transition:opacity .25s}
+.lbl::after{content:"";position:absolute;left:50%;bottom:0;width:1px;height:20px;background:var(--ink)}
+.lbl b{background:var(--ink);color:var(--paper);padding:3px 7px;font-weight:500}
+.lbl.dim{padding:0;transform:translate(-50%,-50%)} .lbl.dim::after{display:none}
+.lbl.dim b{background:#F4F2EC;color:var(--ink);border:1px solid var(--ink)}
+.iso-head{position:absolute;left:72px;top:110px;pointer-events:none}
+.iso-head h2{font-size:52px}
+.iso-panel{position:absolute;left:1360px;right:0;top:0;bottom:0;background:var(--paper);border-left:1px solid var(--line);padding:110px 56px 100px 44px;display:flex;flex-direction:column;gap:18px}
+.steps{list-style:none;display:flex;flex-direction:column;overflow:auto}
+.steps button{display:grid;grid-template-columns:40px 1fr;gap:4px;width:100%;text-align:left;padding:10px 0;border-bottom:1px solid var(--line);opacity:.45;transition:opacity .2s}
+.steps button.done{opacity:.8}
+.steps button.on{opacity:1}
+.steps button .mono{font-size:13px;padding-top:3px;color:var(--mute)}
+.steps button.on .mono{color:var(--red)}
+.steps button b{font-size:17px;font-weight:600;display:block}
+.steps button small{display:none;font-size:14px;color:#4a4d4a;line-height:1.45;margin-top:4px}
+.steps button.on small{display:block}
+.ctrl{display:flex;flex-direction:column;gap:14px;margin-top:auto}
+.scrub{display:flex;align-items:center;gap:14px}
+.scrub input{flex:1;accent-color:var(--red)}
+.btn{border:1px solid var(--ink);padding:9px 14px;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.btn:hover,.btn.on{background:var(--ink);color:var(--paper)}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.seg{display:flex}
+.seg .btn{flex:1;border-right-width:0} .seg .btn:last-child{border-right-width:1px}
+.toggles{display:flex;gap:8px;flex-wrap:wrap}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);padding:10px 12px;font-size:14px;line-height:1.45;max-width:280px;opacity:0;transition:opacity .15s;z-index:5}
+.tip b{display:block;font-size:15px}
+.tip .mono{font-size:12px;color:rgba(240,237,229,.7)}
+.iso-legend{position:absolute;left:72px;bottom:96px;display:flex;gap:22px;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--mute);pointer-events:none}
+.iso-legend i{display:inline-block;width:14px;height:14px;vertical-align:-2px;margin-right:7px;border:1px solid var(--ink)}
+.iso-err{position:absolute;left:72px;top:300px;max-width:700px;display:none}
+
+/* close */
+.close-grid{position:absolute;left:72px;right:72px;top:330px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.close-grid > div{border-top:2px solid var(--ink);padding-top:18px;display:flex;flex-direction:column;gap:12px}
+.close-grid ul{list-style:none;display:flex;flex-direction:column}
+.close-grid li{padding:10px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.45}
+.big .close-grid h3,.close-grid.big h3{font-size:30px}
+.close-grid.big li{font-size:23px;line-height:1.45;padding:14px 0}
+.close-grid li .mono{font-size:13px;color:var(--mute);display:block}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,16,15,.94);display:none;place-items:center;z-index:100;cursor:zoom-out}
+.lb.open{display:grid}
+.lb img{max-width:92vw;max-height:86vh}
+.lb p{position:absolute;bottom:3vh;left:0;right:0;text-align:center;color:var(--paper);font-family:"JetBrains Mono",monospace;font-size:14px}
+
+.hint{position:fixed;right:14px;bottom:10px;font-family:"JetBrains Mono",monospace;font-size:11px;color:rgba(240,237,229,.35);z-index:50}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <div class="chrome" id="chrome"><span class="proj">Container House</span><span class="sec" id="secname"></span></div>
+
+  <!-- 01 COVER -->
+  <section class="slide cover" data-name="Cover" data-dark>
+    <img src="media/v12-11-deck-exterior.jpg" alt="Container house with deck and pergola, aerial view from the south-east">
+    <div class="shade"></div>
+    <div class="txt">
+      <div class="kicker" style="color:#e07c69">Visualization service for container houses</div>
+      <h1 style="margin-top:22px">Your drawings,<br>built to the millimetre</h1>
+      <p>Renders, walkthrough videos and interactive 3D assembly for distributors, contractors and real estate. Every output comes from one model built to your plan dimensions.</p>
+      <div class="meta">
+        <div>Built from<b>Your plans</b></div>
+        <div>Geometry<b>True to dimension</b></div>
+        <div>Generative AI<b>None</b></div>
+        <div>Process<b>End to end</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="slide" data-name="Who it's for">
+    <div class="pad">
+      <div class="kicker">Who it's for</div>
+      <h2 style="margin-top:18px;max-width:24ch">One model, three kinds of buyer</h2>
+    </div>
+    <div class="close-grid big" style="top:300px">
+      <div><h3>Distributors and manufacturers</h3><ul>
+        <li>Catalogue renders of each model and layout</li>
+        <li>Interactive 3D configurator-style view for the website</li>
+        <li>Assembly sequence that shows how modules arrive and connect</li>
+      </ul></div>
+      <div><h3>Contractors and builders</h3><ul>
+        <li>Module-by-module assembly view with steel, piers and openings</li>
+        <li>Plans, sections and isometrics that match the model exactly</li>
+        <li>Clear visuals for client approval before anything is ordered</li>
+      </ul></div>
+      <div><h3>Real estate and developers</h3><ul>
+        <li>Pre-sale exterior renders, day and dusk</li>
+        <li>Furnished interior stills, room by room</li>
+        <li>Walkthrough video in portrait for social and landscape for listings</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- PRECISION -->
+  <section class="slide" data-name="The standard">
+    <div class="pad">
+      <div class="kicker">The standard</div>
+      <h2 style="margin-top:18px;max-width:20ch">Precise by dimension. No AI guesswork.</h2>
+      <p class="lede" style="margin-top:26px;max-width:58ch">Generated images look convincing until someone measures them. Windows move, containers change length, stairs stop adding up. A buyer or an engineer notices, and trust goes with it.</p>
+    </div>
+    <div class="close-grid big" style="top:560px">
+      <div><h3>Built from your drawings</h3><ul>
+        <li>Every container, opening, beam and stair tread is placed at its drawn dimension.<span class="mono">e.g. 40 ft HC · 12 190 × 2 440 × 2 900</span></li>
+      </ul></div>
+      <div><h3>One model, every output</h3><ul>
+        <li>Renders, videos, drawings and the interactive view all come from the same 3D model, so they never disagree.</li>
+      </ul></div>
+      <div><h3>No generative images or video</h3><ul>
+        <li>No morphing, no invented details, no glitches. Every frame is rendered from real geometry.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section class="slide" data-name="The process">
+    <div class="pad">
+      <div class="kicker">The process</div>
+      <h2 style="margin-top:18px;max-width:22ch">I handle the whole process</h2>
+      <p class="lede" style="margin-top:22px;max-width:52ch">You send plans in any form: PDF, DWG or a dimensioned sketch. I take them through to finished marketing outputs. Example project: a two-storey house of five 40 ft High Cubes, about 149 m².</p>
+    </div>
+    <div class="pipe">
+      <button data-go="4"><div class="th"><img src="media/sheet-p4-04.jpg" alt=""></div><div class="step"><h3>Drawings</h3><span>01</span></div><p>Your plans, checked and completed into a coordinated set.</p></button>
+      <button data-go="5"><div class="th"><img src="media/sheet-p13-13.jpg" alt="" style="object-position:20% 50%"></div><div class="step"><h3>Module layout</h3><span>02</span></div><p>The plan resolved into real container modules and steel.</p></button>
+      <button data-go="6"><div class="th"><img src="media/clay-11-deck-exterior.jpg" alt=""></div><div class="step"><h3>3D model</h3><span>03</span></div><p>Dimension-true Blender model, then materials, lighting and site.</p></button>
+      <button data-go="7"><div class="th"><img src="media/v12-11-deck-exterior.jpg" alt=""></div><div class="step"><h3>Renders</h3><span>04</span></div><p>Exterior day and dusk, furnished interiors.</p></button>
+      <button data-go="9"><div class="th"><img src="media/asm-pastel.jpg" alt=""></div><div class="step"><h3>Assembly</h3><span>05</span></div><p>Assembly film rendered in Blender, plus an interactive isometric for web and sales meetings.</p></button>
+      <button data-go="11"><div class="th"><img src="media/s-01-open-plan.jpg" alt=""></div><div class="step"><h3>Walkthrough</h3><span>06</span></div><p>Room-by-room sequence, or a full walkthrough video.</p></button>
+    </div>
+  </section>
+
+  <!-- 03 DRAWINGS -->
+  <section class="slide" data-name="01 · Drawing set">
+    <div class="sheet-wrap" id="sheetWrap"><img id="sheetImg" src="media/sheet-p4-04.jpg" alt="Drawing sheet"></div>
+    <div class="side">
+      <div class="kicker">Step 01 · Drawings</div>
+      <h2>It starts with the plan</h2>
+      <p style="color:#4a4d4a">Example set P2: 14 A3 sheets at 1:50, coordinated with the 3D model, plus two E1 engineering coordination sheets. When the design changed (a two-flight return stair, a relocated WC), the drawings were updated to match the model.</p>
+      <div class="sheets" id="sheetPick">
+        <button class="on" data-src="media/sheet-p4-04.jpg"><img src="media/sheet-p4-04.jpg" alt=""><span>A-101 Ground floor</span></button>
+        <button data-src="media/sheet-p5-05.jpg"><img src="media/sheet-p5-05.jpg" alt=""><span>A-102 Upper floor</span></button>
+        <button data-src="media/sheet-p7-07.jpg"><img src="media/sheet-p7-07.jpg" alt=""><span>A-201 South elevation</span></button>
+        <button data-src="media/sheet-p11-11.jpg"><img src="media/sheet-p11-11.jpg" alt=""><span>A-301 Section A–A</span></button>
+        <button data-src="media/e1-1.jpg"><img src="media/e1-1.jpg" alt=""><span>E1-01 GF coordination</span></button>
+        <button data-src="media/e1-2.jpg"><img src="media/e1-2.jpg" alt=""><span>E1-02 Stair</span></button>
+      </div>
+      <div class="small">Click the sheet to zoom.</div>
+    </div>
+  </section>
+
+  <!-- 04 PLAN → MODULES -->
+  <section class="slide" data-name="02 · Plan to modules">
+    <div class="head">
+      <div><div class="kicker">Step 02 · Module layout</div><h2 style="margin-top:16px">Reading the plan as real modules</h2></div>
+      <div class="r">Each long wall in the plan is a container seam. Three 40 ft High Cubes sit side by side on piers (C1 north to C3 south), and two more stack on C1–C2. The roof of C3 becomes the terrace. Removing the long walls turns each box into a frame, so seam beams and posts pick up the load.</div>
+    </div>
+    <div class="split">
+      <figure><div class="im"><img class="contain" src="media/sheet-p4-04.jpg" alt="Ground floor plan A-101"></div><figcaption><span>A-101 · ground floor · 1:50</span><span>12 190 × 7 320</span></figcaption></figure>
+      <div class="mid">→</div>
+      <figure><div class="im"><img class="contain" src="media/sheet-p13-13.jpg" alt="Module assembly axonometric A-501" style="object-fit:cover;object-position:8% 55%"></div><figcaption><span>A-501 · module assembly · NTS</span><span>C1–C5</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 05 BLENDER MODEL -->
+  <section class="slide" data-name="03 · Blender model">
+    <div class="model-hero" id="wipe">
+      <img src="media/s-01-open-plan.jpg" alt="Open-plan living and dining, high-fidelity render">
+      <div class="wipe"><div class="top"><img src="media/clay-01-open-plan.jpg" alt="The same camera as a neutral gray clay render" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><div class="handle"></div>
+        <span class="lab" style="left:16px">High fidelity</span><span class="lab" style="right:16px">Gray clay</span></div>
+    </div>
+    <div class="side" style="left:1272px">
+      <div class="kicker">Step 03 · 3D model</div>
+      <h2>One model, built in layers</h2>
+      <ol class="pipeline-list">
+        <li><b>Base module</b>: one 40 ft HC with corrugation and castings, instanced five times</li>
+        <li><b>Openings + steel</b>: 220 scheduled hollow-section members, each with its own ID</li>
+        <li><b>Glazing</b>: W01–W09, D01 pivot door, original red D02 doors</li>
+        <li><b>Interiors</b>: fitted furniture, bathrooms, PBR materials</li>
+        <li><b>Lighting + site</b>: 69 fixtures in 17 zones, open field planting</li>
+        <li><b>Stair + rooms</b>: 18-riser two-flight return stair, relocated WC and laundry</li>
+      </ol>
+      <div class="facts" style="margin-top:auto">
+        <div><b>9,842</b><span>repeated parts held as 158 editable instance systems</span></div>
+        <div><b>1:1</b><span>geometry to drawing dimensions</span></div>
+        <div><b>220</b><span>steel members with schedule IDs</span></div>
+        <div><b>1</b><span>source file for every output</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 EXTERIOR RENDERS -->
+  <section class="slide" data-name="04 · Exterior renders">
+    <div class="head">
+      <div><div class="kicker">Step 04 · Renders</div><h2 style="margin-top:16px">Exterior: day and dusk</h2></div>
+      <div class="r">Rendered from the model, so the decks, pergolas, louvers and lighting are where the drawings put them. Daylight sells the layout, and dusk sells the feeling. Click any image to enlarge.</div>
+    </div>
+    <div class="gal gal-ext">
+      <button data-lb="media/v12-11-deck-exterior.jpg"><img src="media/v12-11-deck-exterior.jpg" alt=""><span>Deck exterior · eye level</span></button>
+      <button data-lb="media/v12-12-upper-terrace.jpg"><img src="media/v12-12-upper-terrace.jpg" alt=""><span>Upper terrace and shade louvers</span></button>
+      <button data-lb="media/r-dusk.jpg"><img src="media/r-dusk.jpg" alt=""><span>Dusk</span></button>
+      <button data-lb="media/r-day-ne.jpg"><img src="media/r-day-ne.jpg" alt=""><span>Day · north-east</span></button>
+      <button data-lb="media/asm-pastel.jpg"><img src="media/asm-pastel.jpg" alt=""><span>Isometric · assembly style</span></button>
+    </div>
+  </section>
+
+  <!-- 07 INTERIOR STILLS -->
+  <section class="slide" data-name="04 · Interior renders">
+    <div class="head">
+      <div><div class="kicker">Step 04 · Renders</div><h2 style="margin-top:16px">Furnished interiors</h2></div>
+      <div class="r">Real room sizes with furniture placed at true scale, so buyers see what actually fits. Every view is framed from a 50° Blender camera at 1.65 m eye height, then finished to high fidelity. Click to enlarge.</div>
+    </div>
+    <div class="gal gal-int">
+      <button data-lb="media/s-01-open-plan.jpg"><img src="media/s-01-open-plan.jpg" alt=""><span>01 Open plan</span></button>
+      <button data-lb="media/s-02-living.jpg"><img src="media/s-02-living.jpg" alt=""><span>02 Living</span></button>
+      <button data-lb="media/s-03-dining.jpg"><img src="media/s-03-dining.jpg" alt=""><span>03 Dining</span></button>
+      <button data-lb="media/s-04-kitchen.jpg"><img src="media/s-04-kitchen.jpg" alt=""><span>04 Kitchen</span></button>
+      <button data-lb="media/s-05-entry.jpg"><img src="media/s-05-entry.jpg" alt=""><span>05 Entry</span></button>
+      <button data-lb="media/s-06-stair.jpg"><img src="media/s-06-stair.jpg" alt=""><span>06 Stair</span></button>
+      <button data-lb="media/s-07-main-bedroom.jpg"><img src="media/s-07-main-bedroom.jpg" alt=""><span>07 Main bedroom</span></button>
+      <button data-lb="media/s-08-guest-studio.jpg"><img src="media/s-08-guest-studio.jpg" alt=""><span>08 Studio</span></button>
+      <button data-lb="media/s-09-ensuite.jpg"><img src="media/s-09-ensuite.jpg" alt=""><span>09 Ensuite</span></button>
+      <button data-lb="media/s-10-gallery.jpg"><img src="media/s-10-gallery.jpg" alt=""><span>10 Gallery</span></button>
+    </div>
+  </section>
+
+  <!-- ASSEMBLY FILM -->
+  <section class="slide vid-dark" data-name="Step 05 · Assembly film" data-dark id="asmSlide">
+    <div class="head">
+      <div><div class="kicker" style="color:#e07c69">Step 05 · Assembly film</div><h2 style="margin-top:16px">Built piece by piece</h2></div>
+      <div class="r">Rendered in Blender from the master model, not generated. Foundations, floors, every container, furniture item, deck board and pergola member arrives on its own key, then a 360° orbit.</div>
+    </div>
+    <div class="vidbox"><video id="asmVid" src="media/assembly-72s-720.mp4" poster="media/asm-pastel.jpg" controls muted playsinline preload="metadata"></video></div>
+    <div class="vside">
+      <div class="small mono">1920 × 1080 · 30 fps · 72 s · Blender, from the master model</div>
+      <ol class="chapters" id="asmChapters"></ol>
+      <div class="note" style="margin-top:auto">832 individually editable motion controllers. Delivered in 16:9 and, on request, 9:16 for social.</div>
+    </div>
+  </section>
+
+  <!-- 09 INTERACTIVE ISO -->
+  <section class="slide iso" data-name="Step 05 · Interactive assembly" id="isoSlide">
+    <div class="iso-canvas" id="isoCanvas"></div>
+    <div class="iso-labels" id="isoLabels"></div>
+    <div class="tip" id="isoTip"></div>
+    <div class="iso-head">
+      <div class="kicker">Step 05 · Interactive assembly · live demo</div>
+      <h2 style="margin-top:14px">Assembly, step by step</h2>
+      <p class="small" style="margin-top:10px;max-width:50ch">Every part is placed from the drawing dimensions and the steel schedule. It runs in the browser, so it can go on your website or play in a sales meeting. Drag to orbit, scroll to zoom, hover a part for its spec.</p>
+    </div>
+    <div class="iso-legend">
+      <span><i style="background:#7C8083"></i>Container shell</span>
+      <span><i style="background:#2B2E2D"></i>Steel</span>
+      <span><i style="background:#A9C3CC"></i>Glazing</span>
+      <span><i style="background:#B28A5D"></i>Timber</span>
+      <span><i style="background:#A84C3C"></i>Current step</span>
+    </div>
+    <div class="iso-err small" id="isoErr">The 3D view needs WebGL and an internet connection to load three.js.</div>
+    <div class="iso-panel">
+      <div class="num" id="stepCount">STEP 00 / 10</div>
+      <ol class="steps" id="stepList"></ol>
+      <div class="ctrl">
+        <div class="scrub"><button class="btn red" id="playBtn" style="min-width:96px">Play</button><input type="range" id="scrub" min="0" max="10" step="0.01" value="10"></div>
+        <div class="seg" id="viewSeg"><button class="btn on" data-view="iso">Iso SE</button><button class="btn" data-view="iso2">Iso NW</button><button class="btn" data-view="plan">Plan</button></div>
+        <div class="toggles"><button class="btn" id="explodeBtn">Explode</button><button class="btn" id="xrayBtn">X-ray</button><button class="btn" id="labelBtn">Labels on</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM-BY-ROOM SEQUENCE -->
+  <section class="slide vid-dark" data-name="Step 06 · Room by room" data-dark id="seqSlide">
+    <div class="head">
+      <div><div class="kicker" style="color:#e07c69">Step 06 · Room by room</div><h2 style="margin-top:16px">Walk through it before it's built</h2></div>
+      <div class="r">The route a buyer would take: arrive, enter, cross the ground floor, climb the stair, see every room, then step out onto the terrace. Every frame is rendered from the same model.</div>
+    </div>
+    <div class="vidbox seq" id="seq"><div class="seq-bar"><i id="seqBar"></i></div><button class="seq-pp mono" id="seqPP">Pause</button></div>
+    <div class="vside">
+      <div class="small mono">14 frames · rendered from the 3D model</div>
+      <ol class="chapters" id="chapters"></ol>
+      <div class="note" style="margin-top:auto">Also available as a walkthrough video: Full HD or 4K, 16:9 for listings and 9:16 for Reels, TikTok and Shorts.</div>
+    </div>
+  </section>
+
+  <!-- OUTPUTS MENU -->
+  <section class="slide" data-name="What you can order">
+    <div class="pad">
+      <div class="kicker">What you can order</div>
+      <h2 style="margin-top:18px">Pick the outputs your sales need</h2>
+    </div>
+    <div class="close-grid big" style="top:300px;grid-template-columns:repeat(3,1fr);row-gap:60px">
+      <div><h3>Drawings</h3><ul>
+        <li>Plans, elevations, sections, module assembly<span class="mono">PDF · A3 / A1 · to scale</span></li>
+      </ul></div>
+      <div><h3>Exterior renders</h3><ul>
+        <li>Day, golden hour and dusk, on your site or a neutral one<span class="mono">JPG / PNG · up to 4K</span></li>
+      </ul></div>
+      <div><h3>Interior renders</h3><ul>
+        <li>Furnished rooms at true scale, in your finishes<span class="mono">JPG / PNG · up to 4K</span></li>
+      </ul></div>
+      <div><h3>Interactive 3D assembly</h3><ul>
+        <li>Step-by-step isometric for your website or sales meetings<span class="mono">Web page · embeddable</span></li>
+      </ul></div>
+      <div><h3>Assembly animation</h3><ul>
+        <li>Rendered from real geometry: piers, modules craned in, steel, glazing, deck<span class="mono">MP4 · 16:9 and 9:16</span></li>
+      </ul></div>
+      <div><h3>Walkthrough video</h3><ul>
+        <li>Eye-level camera path through every room<span class="mono">MP4 · Full HD / 4K · 16:9 and 9:16</span></li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="slide cover" data-name="Get started" data-dark>
+    <img src="media/r-dusk.jpg" alt="Container house at dusk, aerial view from the south-east">
+    <div class="shade"></div>
+    <div class="txt">
+      <div class="kicker" style="color:#e07c69">How to start</div>
+      <h1 style="margin-top:22px;font-size:110px">Send the plans.<br>I'll do the rest.</h1>
+      <div class="meta" style="margin-top:48px;gap:56px">
+        <div>01<b>Send drawings</b></div>
+        <div>02<b>Scope and quote</b></div>
+        <div>03<b>Model review</b></div>
+        <div>04<b>Final delivery</b></div>
+      </div>
+      <p style="margin-top:56px;font-size:30px;color:var(--paper)">David Budzik</p>
+      <p class="mono" style="margin-top:8px;font-size:20px"><a href="mailto:bzik.david@gmail.com" style="color:inherit">bzik.david@gmail.com</a></p>
+    </div>
+  </section>
+
+  <div class="foot" id="foot">
+    <span class="mono" id="pageNo">01 / 11</span>
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="nav"><button id="prevBtn" aria-label="Previous slide">←</button><button id="nextBtn" aria-label="Next slide">→</button></div>
+  </div>
+</div>
+
+<div class="lb" id="lb"><img alt=""><p></p></div>
+<div class="hint">← → keys · F fullscreen</div>
+
+<script>
+/* ---------- deck ---------- */
+const stage=document.getElementById('stage');
+const slides=[...document.querySelectorAll('.slide')];
+let cur=0;
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.setProperty('--s',s)}
+addEventListener('resize',fit);fit();
+function go(i){
+  i=Math.max(0,Math.min(slides.length-1,i));
+  slides[cur].classList.remove('active');
+  slides[cur].querySelectorAll('video').forEach(v=>v.pause());
+  cur=i;const s=slides[cur];s.classList.add('active');
+  const dark=s.hasAttribute('data-dark');
+  document.getElementById('chrome').classList.toggle('dark',dark);
+  document.getElementById('foot').classList.toggle('dark',dark);
+  document.getElementById('secname').textContent=s.dataset.name;
+  document.getElementById('pageNo').textContent=String(cur+1).padStart(2,'0')+' / '+slides.length;
+  document.getElementById('barFill').style.width=((cur+1)/slides.length*100)+'%';
+  try{history.replaceState(null,'','#'+(cur+1))}catch(e){}
+  document.dispatchEvent(new CustomEvent('slide',{detail:s}));
+}
+document.getElementById('prevBtn').onclick=()=>go(cur-1);
+document.getElementById('nextBtn').onclick=()=>go(cur+1);
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT')return;
+  if(lb.classList.contains('open')){if(e.key==='Escape')lb.classList.remove('open');return}
+  if(e.key==='ArrowRight'||e.key==='PageDown'||(e.key===' '&&!slides[cur].querySelector('video'))){e.preventDefault();go(cur+1)}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(cur-1)}
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.()}
+});
+const start=parseInt(location.hash.slice(1));
+slides[0].classList.add('active');go(isNaN(start)?0:start-1);
+
+/* sheets */
+const sheetImg=document.getElementById('sheetImg'),sheetWrap=document.getElementById('sheetWrap');
+document.querySelectorAll('#sheetPick button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#sheetPick button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  sheetImg.src=b.dataset.src;sheetWrap.classList.remove('zoom');
+});
+sheetWrap.onclick=e=>{
+  const r=sheetWrap.getBoundingClientRect();
+  sheetImg.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%';
+  sheetWrap.classList.toggle('zoom');
+};
+
+/* clay / material wipe */
+const wipe=document.getElementById('wipe');
+function setW(e){const r=wipe.getBoundingClientRect();const x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));wipe.style.setProperty('--w',(x*100)+'%')}
+let wDown=false;
+wipe.addEventListener('pointerdown',e=>{wDown=true;setW(e);wipe.setPointerCapture(e.pointerId)});
+wipe.addEventListener('pointermove',e=>{if(wDown)setW(e)});
+wipe.addEventListener('pointerup',()=>wDown=false);
+
+/* lightbox */
+const lb=document.getElementById('lb');
+document.querySelectorAll('[data-lb]').forEach(b=>b.onclick=()=>{
+  lb.querySelector('img').src=b.dataset.lb;lb.querySelector('p').textContent=b.querySelector('span')?.textContent||'';lb.classList.add('open');
+});
+lb.onclick=()=>lb.classList.remove('open');
+
+/* assembly film chapters */
+const asmCh=[[0,'Foundations, floor and deck waves, ground-floor shells'],[10,'Twenty ground-floor furniture items'],[24,'Upper floor and upper containers'],[31,'Ten upstairs furniture items'],[40.5,'Terrace, railings, pergola and 52 timber bars'],[48.2,'Upper roof and solar equipment'],[51,'Outdoor furniture and planting'],[60,'360° orbit']];
+const av=document.getElementById('asmVid'),acEl=document.getElementById('asmChapters');
+asmCh.forEach(([t,n])=>{const li=document.createElement('li');const b=document.createElement('button');
+  b.innerHTML='<span class="mono">'+Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0')+'</span><span>'+n+'</span>';
+  b.onclick=()=>{av.currentTime=t+0.05;av.play()};li.appendChild(b);acEl.appendChild(li)});
+av.addEventListener('timeupdate',()=>{let k=0;asmCh.forEach(([t],i)=>{if(av.currentTime>=t)k=i});acEl.querySelectorAll('button').forEach((b,i)=>b.classList.toggle('on',i===k))});
+
+/* room-by-room sequence */
+const seqFrames=[['v12-11-deck-exterior','Arrival from the south-east'],['s-05-entry','Entry'],['v12-13-reading-corner','Quiet reading'],['s-01-open-plan','Open-plan ground floor'],['s-02-living','Living room toward the garden'],['s-03-dining','Dining and kitchen'],['s-04-kitchen','Kitchen'],['s-06-stair','Return stair'],['s-10-gallery','Upper gallery'],['s-07-main-bedroom','Main bedroom'],['s-09-ensuite','Ensuite'],['s-08-guest-studio','Studio'],['v12-12-upper-terrace','Roof terrace'],['r-dusk','The house at dusk']];
+const seq=document.getElementById('seq'),chEl=document.getElementById('chapters'),seqBar=document.getElementById('seqBar'),seqPP=document.getElementById('seqPP');
+const seqImgs=seqFrames.map(([f,n],i)=>{const im=document.createElement('img');im.src='media/'+f+'.jpg';im.alt=n;seq.insertBefore(im,seq.firstChild);
+  const li=document.createElement('li');const b=document.createElement('button');
+  b.innerHTML='<span class="mono">'+String(i+1).padStart(2,'0')+'</span><span>'+n+'</span>';
+  b.onclick=()=>showSeq(i,true);li.appendChild(b);chEl.appendChild(li);return im});
+const SEQ_MS=4000;let seqI=0,seqT0=0,seqPaused=false,seqRaf=0;
+function showSeq(i,reset){seqI=(i+seqFrames.length)%seqFrames.length;
+  seqImgs.forEach((im,k)=>{im.classList.toggle('on',k===seqI);if(k===seqI){im.style.animation='none';im.offsetWidth;im.style.animation=''}});
+  chEl.querySelectorAll('button').forEach((b,k)=>b.classList.toggle('on',k===seqI));seqT0=performance.now()}
+function seqTick(now){if(!seqSlide.classList.contains('active')){seqRaf=0;return}
+  if(!seqPaused){const f=(now-seqT0)/SEQ_MS;seqBar.style.width=Math.min(1,f)*100+'%';if(f>=1)showSeq(seqI+1)}else seqT0=now-parseFloat(seqBar.style.width||0)/100*SEQ_MS;
+  seqRaf=requestAnimationFrame(seqTick)}
+const seqSlide=document.getElementById('seqSlide');
+seqPP.onclick=()=>{seqPaused=!seqPaused;seqPP.textContent=seqPaused?'Play':'Pause';seqImgs.forEach(im=>im.style.animationPlayState=seqPaused?'paused':'running')};
+seq.addEventListener('click',e=>{if(e.target!==seqPP)showSeq(seqI+1)});
+document.addEventListener('slide',e=>{if(e.detail===seqSlide&&!seqRaf){showSeq(0);seqRaf=requestAnimationFrame(seqTick)}});
+if(seqSlide.classList.contains('active')){showSeq(0);seqRaf=requestAnimationFrame(seqTick)}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const slide=document.getElementById('isoSlide');
+const host=document.getElementById('isoCanvas');
+const labelHost=document.getElementById('isoLabels');
+const tip=document.getElementById('isoTip');
+const W=1360,H=1080;
+
+const C={ink:0x1d201f,shell:0x7c8083,steel:0x2b2e2d,glass:0xa9c3cc,oak:0xb28a5d,red:0xa84c3c,pier:0xbdb8ad,pv:0x34404f,paver:0xd8d4cb,mesh:0x2b2e2d};
+const L=12.19,Wd=2.44,Hc=2.9,P=0.3; // module dims, pier height
+const GF=P, UF=P+Hc, RF=P+2*Hc;
+
+let renderer;
+try{
+  renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+}catch(e){document.getElementById('isoErr').style.display='block';throw e}
+renderer.setPixelRatio(Math.min(2,devicePixelRatio));
+renderer.setSize(W,H);
+host.appendChild(renderer.domElement);
+
+const scene=new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xffffff,0xbfb9ad,1.6));
+const sun=new THREE.DirectionalLight(0xffffff,1.6);sun.position.set(8,18,12);scene.add(sun);
+
+const FR=12;
+const cam=new THREE.OrthographicCamera(-FR*W/H,FR*W/H,FR,-FR,-200,400);
+const controls=new OrbitControls(cam,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=.08;controls.minZoom=.6;controls.maxZoom=4;
+controls.target.set(-1.4,3.4,1.4);
+
+const root=new THREE.Group();root.position.set(-L/2-1,0,-4.8);scene.add(root);
+
+// ground grid
+const grid=new THREE.GridHelper(44,44,0xc9c4b8,0xdedad1);grid.position.y=-0.001;scene.add(grid);
+const site=new THREE.Mesh(new THREE.PlaneGeometry(22,15),new THREE.MeshBasicMaterial({color:0xe9e5dc}));
+site.rotation.x=-Math.PI/2;site.position.set(L/2+1,0,4.8);root.add(site);
+
+/* ---------- builders ---------- */
+const pieces=[];
+function mats(color,opts={}){return new THREE.MeshLambertMaterial({color,transparent:true,opacity:1,...opts})}
+function edgeMat(){return new THREE.LineBasicMaterial({color:C.ink,transparent:true})}
+function box(w,h,d,color,{x=0,y=0,z=0,edges=true,mat}={}){
+  const g=new THREE.BoxGeometry(w,h,d);g.translate(w/2,h/2,d/2);
+  const m=new THREE.Mesh(g,mat||mats(color));m.position.set(x,y,z);
+  if(edges){const e=new THREE.LineSegments(new THREE.EdgesGeometry(g),edgeMat());m.add(e)}
+  return m;
+}
+function lines(pts,color=C.ink,opacity=1){
+  const g=new THREE.BufferGeometry().setFromPoints(pts);
+  return new THREE.LineSegments(g,new THREE.LineBasicMaterial({color,transparent:true,opacity}));
+}
+function add(obj,step,{type='drop',delay=0,lift=7,level=0,info=null,label=null,anchor=null,shell=false}={}){
+  root.add(obj);
+  const p={obj,step,type,delay,lift,level,info,label,anchor,shell,base:obj.position.clone(),mats:[],baseOp:[],edges:[]};
+  obj.traverse(o=>{if(o.material){p.mats.push(o.material);p.baseOp.push(o.material.opacity);if(o.isLineSegments)p.edges.push(o.material)}
+    if(info&&o.isMesh)o.userData.piece=p});
+  pieces.push(p);return p;
+}
+
+function container(name,x0,y0,z0,info){
+  const g=new THREE.Group();g.position.set(x0,y0,z0);
+  const shell=box(L,Hc,Wd,C.shell);g.add(shell);
+  // corrugation on long faces and ends
+  const pts=[];
+  for(let x=0.2;x<L-0.15;x+=0.3){pts.push(new THREE.Vector3(x,0.12,-0.004),new THREE.Vector3(x,Hc-0.12,-0.004));pts.push(new THREE.Vector3(x,0.12,Wd+0.004),new THREE.Vector3(x,Hc-0.12,Wd+0.004))}
+  for(let z=0.2;z<Wd-0.15;z+=0.3){pts.push(new THREE.Vector3(-0.004,0.12,z),new THREE.Vector3(-0.004,Hc-0.12,z));pts.push(new THREE.Vector3(L+0.004,0.12,z),new THREE.Vector3(L+0.004,Hc-0.12,z))}
+  g.add(lines(pts,C.ink,.28));
+  // rails
+  const rp=[];[0.12,Hc-0.12].forEach(y=>{[-0.004,Wd+0.004].forEach(z=>rp.push(new THREE.Vector3(0,y,z),new THREE.Vector3(L,y,z)))});
+  g.add(lines(rp,C.ink,.6));
+  // castings
+  [[0,0],[L-0.18,0],[0,Wd-0.16],[L-0.18,Wd-0.16]].forEach(([x,z])=>{[0,Hc-0.12].forEach(y=>g.add(box(0.18,0.12,0.16,C.steel,{x,y,z,edges:false})))});
+  return add(g,info.step,{type:'drop',lift:info.lift||8,level:info.level,shell:true,info:{title:name,spec:info.spec,rooms:info.rooms},label:name,anchor:new THREE.Vector3(x0+L*info.ax,y0+Hc+0.05,z0+Wd/2)});
+}
+
+/* STEP 0 · piers */
+const pierX=[0.15,4.25,8.2,12.04],pierZ=[0.1,2.44,4.88,7.22];
+let k=0;
+pierX.forEach(x=>pierZ.forEach(z=>{
+  add(box(0.32,P,0.32,C.pier,{x:x-0.16,y:0,z:z-0.16}),0,{type:'grow',delay:(k++)*0.035,info:{title:'Concrete pier',spec:'Under each corner casting and new seam post · 16 total',rooms:'Foundation design by structural engineer'}});
+}));
+// dimension lines
+const dimPts=[new THREE.Vector3(0,0.02,-1.2),new THREE.Vector3(L,0.02,-1.2),new THREE.Vector3(0,0.02,-1.45),new THREE.Vector3(0,0.02,-0.95),new THREE.Vector3(L,0.02,-1.45),new THREE.Vector3(L,0.02,-0.95),
+  new THREE.Vector3(-1.2,0.02,0),new THREE.Vector3(-1.2,0.02,3*Wd),new THREE.Vector3(-1.45,0.02,0),new THREE.Vector3(-0.95,0.02,0),new THREE.Vector3(-1.45,0.02,3*Wd),new THREE.Vector3(-0.95,0.02,3*Wd)];
+const dimP=add(lines(dimPts,C.ink,.9),0,{type:'fade'});
+const dims=[{t:'12 190',a:new THREE.Vector3(L/2,0.02,-1.2)},{t:'7 320',a:new THREE.Vector3(-1.2,0.02,1.5*Wd)}];
+
+/* STEPS 1–3 · ground modules */
+container('C1',0,GF,0,{step:1,level:0,ax:0.93,spec:'40 ft High Cube · 12.19 × 2.44 × 2.90 m · north',rooms:'Kitchen run, stair, WC + laundry. Original red doors kept at the east end.'});
+container('C2',0,GF,Wd,{step:2,level:0,ax:0.8,spec:'40 ft High Cube · middle module',rooms:'Living, dining, entry hall. Both long walls removed.'});
+container('C3',0,GF,2*Wd,{step:3,level:0,ax:0.67,spec:'40 ft High Cube · south module',rooms:'Living and dining. South wall opened for two W01 glass walls. Roof becomes the terrace.'});
+
+/* STEP 4 · seam steel + stair */
+const steel=new THREE.Group();
+[Wd,2*Wd].forEach(z=>{
+  steel.add(box(11.89,0.3,0.2,C.steel,{x:0.15,y:GF+Hc-0.35,z:z-0.1}));
+  [4.25,8.2].forEach(x=>steel.add(box(0.12,Hc-0.38,0.12,C.steel,{x:x-0.06,y:GF,z:z-0.06})));
+});
+steel.add(box(11.89,0.3,0.2,C.steel,{x:0.15,y:UF+Hc-0.35,z:Wd-0.1}));
+steel.add(box(0.12,Hc-0.38,0.12,C.steel,{x:6.54,y:UF,z:Wd-0.06}));
+// W01 lintel + post on C3 south
+steel.add(box(8.3,0.2,0.15,C.steel,{x:0.15,y:GF+Hc-0.32,z:3*Wd-0.15}));
+add(steel,4,{type:'drop',lift:3,level:0,info:{title:'Seam steel',spec:'RHS 300×200×8 seam girders · SHS 120×120×6 posts',rooms:'Long walls removed, so each box becomes a frame. Spans stay near 4 m. Nominal sizes, not calculated.'},label:'Seam girders RHS 300×200',anchor:new THREE.Vector3(2.2,GF+Hc-0.2,2*Wd)});
+const stair=new THREE.Group();
+// E1 return stair (A-101 P2 / E1-01): 2 × 9 risers of 160.6 mm, 290 mm goings, mid landing against D02
+const R=0.1606,G=0.29,x0=8.67,xL=x0+8*G;
+for(let i=0;i<8;i++)stair.add(box(G,0.05,0.92,C.oak,{x:x0+i*G,y:GF+(i+1)*R-0.05,z:0.2}));         // north flight, up eastward
+stair.add(box(L-0.12-xL,0.08,1.95,C.oak,{x:xL,y:GF+9*R-0.08,z:0.2}));                                // mid landing +1.445
+for(let j=0;j<8;j++)stair.add(box(G,0.05,0.92,C.oak,{x:xL-(j+1)*G,y:GF+(10+j)*R-0.05,z:1.23}));     // south flight, up westward
+add(stair,4,{type:'drop',lift:3,level:0,info:{title:'Return stair',spec:'18 risers 160.6 mm · 290 mm goings · two flights',rooms:'Two flights in C1 with a mid landing against the red D02 doors. 1,000 mm landing, 917.6 mm between handrails.'}});
+
+/* STEPS 5–6 · upper modules */
+container('C4',0,UF,0,{step:5,level:1,lift:9,ax:0.93,spec:'40 ft High Cube · upper north, on C1',rooms:'Ensuite, landing and gallery over the stair void.'});
+container('C5',0,UF,Wd,{step:6,level:1,lift:9,ax:0.78,spec:'40 ft High Cube · upper middle, on C2',rooms:'Main bedroom, walk-in wardrobe, family bathroom, studio.'});
+
+/* STEP 7 · glazing + doors */
+const glz=new THREE.Group();
+function pane(w,h,{x,y,z,axis='z',color=C.glass,mull=0}){
+  const t=0.05;const g=axis==='z'?box(w,h,t,color,{x,y,z}):box(t,h,w,color,{x,y,z});
+  g.material.opacity=color===C.glass?0.92:1;
+  if(mull>1){const pts=[];for(let i=1;i<mull;i++){const f=i/mull;
+    if(axis==='z')pts.push(new THREE.Vector3(w*f,0,t+0.003),new THREE.Vector3(w*f,h,t+0.003),new THREE.Vector3(w*f,0,-0.003),new THREE.Vector3(w*f,h,-0.003));
+    else pts.push(new THREE.Vector3(-0.003,0,w*f),new THREE.Vector3(-0.003,h,w*f),new THREE.Vector3(t+0.003,0,w*f),new THREE.Vector3(t+0.003,h,w*f));}
+    g.add(lines(pts,C.ink,.9))}
+  glz.add(g);return g;
+}
+const S=3*Wd;
+pane(3.9,2.45,{x:0.25,y:GF+0.25,z:S,mull:2});pane(3.9,2.45,{x:4.35,y:GF+0.25,z:S,mull:2}); // W01
+[0,1,2].forEach(i=>pane(2.2,2.45,{x:-0.05,y:GF+0.25,z:i*Wd+0.12,axis:'x',mull:i===2?2:0})); // W02
+[0,1].forEach(i=>pane(2.2,2.45,{x:-0.05,y:UF+0.25,z:i*Wd+0.12,axis:'x'})); // W03
+pane(3.0,2.45,{x:0.6,y:UF+0.2,z:2*Wd,mull:2}); // W04
+pane(2.4,2.45,{x:8.8,y:UF+0.2,z:2*Wd,mull:2}); // W05
+pane(2.19,2.45,{x:L,y:GF+0.25,z:2*Wd+0.12,axis:'x'}); // W09
+pane(1.2,2.4,{x:L,y:GF+0.25,z:Wd+0.5,axis:'x',color:C.steel}); // D01
+pane(0.6,2.4,{x:L,y:GF+0.25,z:Wd+1.75,axis:'x'}); // sidelight
+const d02=pane(2.34,2.59,{x:L,y:GF+0.15,z:0.05,axis:'x',color:C.red,mull:2}); // D02
+{const pts=[];[0.35,0.8,1.55,2.0].forEach(z=>pts.push(new THREE.Vector3(0.06,0.1,z),new THREE.Vector3(0.06,2.5,z)));d02.add(lines(pts,C.ink,.9))}
+pane(1.2,2.45,{x:L,y:UF+0.2,z:Wd+0.6,axis:'x'}); // W08
+[[9.0,GF],[10.2,GF],[4.8,UF],[7.0,UF],[9.6,UF]].forEach(([x,y])=>pane(0.6,1.8,{x,y:y+0.6,z:-0.05})); // W06
+pane(2.4,0.6,{x:4.6,y:GF+1.35,z:-0.05}); // W07
+add(glz,7,{type:'fade',level:0,info:{title:'Glazing + doors',spec:'Black aluminium, double glazed · KLIL 9200 / 4750 basis',rooms:'W01 2× sliding walls 3.9 × 2.45 · W02–W03 west glass · W04–W05 terrace doors · D01 pivot · D02 original red doors.'},label:'W01 sliding glass 3.9 × 2.45',anchor:new THREE.Vector3(2.2,GF+2.7,S)});
+// upper glazing moves with the upper level when exploded
+const glzUF=new THREE.Group();
+glz.children.filter(c=>c.position.y>=UF).forEach(c=>glzUF.add(c));
+add(glzUF,7,{type:'fade',level:1,info:pieces[pieces.length-1].info});
+
+/* STEP 8 · deck + pergolas */
+const deck=new THREE.Group();
+deck.add(box(13.0,0.12,2.4,C.oak,{x:-0.3,y:0.28,z:S}));
+deck.add(box(2.2,0.12,2.4+Wd,C.oak,{x:L,y:0.28,z:Wd*2}));
+{const pts=[];for(let x=-0.3;x<12.7;x+=0.15)pts.push(new THREE.Vector3(x,0.401,S),new THREE.Vector3(x,0.401,S+2.4));deck.add(lines(pts,C.ink,.18))}
+add(deck,8,{type:'grow',level:0,info:{title:'Timber deck',spec:'+0.40 · south 2.4 m deep, wraps the east entry',rooms:'Built-in bench, sun loungers, umbrellas.'}});
+const perg=new THREE.Group();
+const pz=S+2.3;
+[0.0,4.1,8.15,12.09].forEach(x=>perg.add(box(0.1,UF-0.4,0.1,C.steel,{x,y:0.4,z:pz})));
+perg.add(box(12.19,0.2,0.1,C.steel,{x:0,y:UF-0.2,z:pz}));
+for(let x=0.05;x<L;x+=0.45)perg.add(box(0.05,0.15,2.4,C.steel,{x,y:UF-0.15,z:S,edges:false}));
+[[L+2.1,2*Wd+0.05],[L+2.1,S+2.3]].forEach(([x,z])=>perg.add(box(0.1,UF-0.4,0.1,C.steel,{x,y:0.4,z})));
+perg.add(box(0.1,0.2,2.4+Wd,C.steel,{x:L+2.1,y:UF-0.2,z:2*Wd}));
+for(let z=2*Wd+0.1;z<S+2.4;z+=0.45)perg.add(box(2.2,0.15,0.05,C.steel,{x:L,y:UF-0.15,z,edges:false}));
+add(perg,8,{type:'drop',lift:4,level:0,delay:.25,info:{title:'Pergolas',spec:'SHS 100×100×5 posts · RHS 200×100 beams · matte black',rooms:'South pergola 12.19 × 2.4 shades the W01 glass. Entry pergola wraps the pivot door.'},label:'South pergola 12.19 × 2.4',anchor:new THREE.Vector3(L-0.5,UF,pz)});
+
+/* STEP 9 · terrace + louvers + PV */
+const ter=new THREE.Group();
+ter.add(box(L-0.1,0.06,Wd-0.1,C.paver,{x:0.05,y:UF,z:2*Wd+0.05}));
+const rail=(len,x,z,axis)=>{const h=1.1;const fr=axis==='x'?box(len,0.05,0.05,C.steel,{x,y:UF+h,z}):box(0.05,0.05,len,C.steel,{x,y:UF+h,z});
+  const mesh=axis==='x'?box(len,h,0.02,C.mesh,{x,y:UF,z,edges:false}):box(0.02,h,len,C.mesh,{x,y:UF,z,edges:false});mesh.material.opacity=.35;ter.add(fr,mesh)};
+rail(L,0,S-0.05,'x');rail(Wd,0,2*Wd,'z');rail(Wd,L-0.05,2*Wd,'z');
+add(ter,9,{type:'drop',lift:3,level:1,info:{title:'Roof terrace',spec:'29.7 m² on C3 · porcelain pavers on pedestals',rooms:'Black mesh railing 1.10 m. Doors W04 and W05 open onto it.'},label:'Roof terrace 29.7 m²',anchor:new THREE.Vector3(6,UF+1.15,S-0.05)});
+const shade=new THREE.Group();
+[0.05,6.05,12.05].forEach(x=>shade.add(box(0.08,Hc-0.05,0.08,C.steel,{x,y:UF,z:S-0.12})));
+shade.add(box(L,0.12,0.1,C.steel,{x:0,y:RF-0.1,z:S-0.15}));
+for(let i=0;i<48;i++){const b=box(0.04,0.2,Wd,C.steel,{x:0.12+i*0.25,y:RF-0.05,z:2*Wd,edges:false});b.rotation.z=20*Math.PI/180;shade.add(b)}
+add(shade,9,{type:'drop',lift:4,level:2,delay:.2,info:{title:'Louver shade',spec:'48 louvers at 20° over the terrace',rooms:'Shades the upper south glass in summer.'}});
+const pv=new THREE.Group();
+for(let i=0;i<8;i++)for(let j=0;j<2;j++){const p=box(1.1,0.04,1.9,C.pv,{x:1.0+i*1.2,y:RF+0.12,z:0.3+j*2.2});p.rotation.x=-0.08;pv.add(p)}
+pv.add(box(1.6,0.5,0.55,0xd9d6cf,{x:10.5,y:RF,z:3.9}));
+add(pv,9,{type:'drop',lift:4,level:2,delay:.35,info:{title:'Roof services',spec:'PV array on the upper block · solar water heater',rooms:'Membrane roof with fall to scuppers; rainwater to a garden tank.'},label:'PV array',anchor:new THREE.Vector3(5.8,RF+0.3,0.4)});
+
+/* ---------- steps UI ---------- */
+const STEPS=[
+  ['Set out piers','16 concrete piers under the corner castings and new seam posts. Finished floor +0.55.'],
+  ['C1 · north module','40 ft High Cube, 12.19 × 2.44 × 2.90 m. Kitchen, stair, WC. Red doors stay at the east end.'],
+  ['C2 · middle module','Locked to C1 at the castings. Dining and entry hall.'],
+  ['C3 · south module','Living and dining. South wall cut for W01. Its roof becomes the terrace.'],
+  ['Seam steel + stair','Long walls removed. RHS 300×200 seam girders and SHS posts take the load. 18-riser two-flight return stair in C1.'],
+  ['C4 · upper north','Craned onto C1 castings. Ensuite, landing and gallery.'],
+  ['C5 · upper middle','Craned onto C2. Main bedroom, bathroom, studio.'],
+  ['Glazing + doors','W01–W09 black aluminium. D01 pivot door. Original red D02 doors kept.'],
+  ['Deck + pergolas','Timber deck +0.40. South pergola 12.19 × 2.4 and the wrap-around entry pergola.'],
+  ['Terrace, shade, roof','Mesh railing 1.10 m, 48 louvers at 20°, PV array and solar water heater.'],
+];
+const N=STEPS.length;
+const stepList=document.getElementById('stepList');
+STEPS.forEach(([t,d],i)=>{const li=document.createElement('li');const b=document.createElement('button');
+  b.innerHTML='<span class="mono">'+String(i+1).padStart(2,'0')+'</span><span><b>'+t+'</b><small>'+d+'</small></span>';
+  b.onclick=()=>{playing=false;playBtn.textContent='Play';tgt=i+1;if(t>i+1)tNow=i};li.appendChild(b);stepList.appendChild(li)});
+
+/* labels */
+const labelEls=[];
+function mkLabel(text,cls){const d=document.createElement('div');d.className='lbl '+(cls||'');d.innerHTML='<b>'+text+'</b>';labelHost.appendChild(d);return d}
+pieces.forEach(p=>{if(p.label)p.el=mkLabel(p.label)});
+dims.forEach(d=>d.el=mkLabel(d.t,'dim'));
+
+/* state */
+let tNow=N,tgt=N,playing=false,explode=0,explodeT=0,xray=false,showLabels=true;
+const scrub=document.getElementById('scrub'),playBtn=document.getElementById('playBtn');
+scrub.oninput=()=>{playing=false;playBtn.textContent='Play';tgt=tNow=+scrub.value};
+playBtn.onclick=()=>{playing=!playing;playBtn.textContent=playing?'Pause':'Play';if(playing){if(tNow>=N-0.01)tNow=0;tgt=N}};
+document.getElementById('explodeBtn').onclick=e=>{explodeT=explodeT?0:1;e.target.classList.toggle('on',!!explodeT);setView(curView)};
+document.getElementById('xrayBtn').onclick=e=>{xray=!xray;e.target.classList.toggle('on',xray)};
+document.getElementById('labelBtn').onclick=e=>{showLabels=!showLabels;e.target.textContent=showLabels?'Labels on':'Labels off'};
+
+/* views */
+const views={iso:new THREE.Vector3(1,0.82,1),iso2:new THREE.Vector3(-1,0.82,-1),plan:new THREE.Vector3(0,1,0.0001)};
+let camFrom=null,camTo=null,camK=1,curView='iso';
+function setView(v,instant){curView=v;
+  const d=views[v].clone().normalize().multiplyScalar(60);
+  camFrom={p:cam.position.clone(),z:cam.zoom,t:controls.target.clone()};
+  const tv=v==='plan'?new THREE.Vector3(-1.2,0,0):v==='iso2'?new THREE.Vector3(1.4,3.4,-1.4):new THREE.Vector3(-1.4,3.4,1.4);
+  if(explodeT&&v!=='plan')tv.y+=2;
+  camTo={p:tv.clone().add(d),z:(v==='plan'?1.15:0.95)*(explodeT?0.78:1),t:tv};
+  camK=instant?1:0;if(instant){cam.position.copy(camTo.p);cam.zoom=camTo.z;controls.target.copy(camTo.t);cam.updateProjectionMatrix()}
+}
+document.querySelectorAll('#viewSeg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#viewSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setView(b.dataset.view)});
+setView('iso',true);
+
+/* hover */
+const ray=new THREE.Raycaster(),mouse=new THREE.Vector2();let hoverP=null;
+renderer.domElement.addEventListener('pointermove',e=>{
+  const r=renderer.domElement.getBoundingClientRect();
+  mouse.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);
+  ray.setFromCamera(mouse,cam);
+  const hits=ray.intersectObjects(root.children,true).filter(h=>h.object.visible&&h.object.userData.piece&&h.object.userData.piece.vis>0.5);
+  const sc=r.width/W;
+  if(hits.length){hoverP=hits[0].object.userData.piece;const i=hoverP.info;
+    tip.innerHTML='<b>'+i.title+'</b><span class="mono">'+i.spec+'</span><br>'+i.rooms;
+    tip.style.left=((e.clientX-r.left)/sc+18)+'px';tip.style.top=((e.clientY-r.top)/sc+18)+'px';tip.style.opacity=1;renderer.domElement.style.cursor='help'}
+  else{hoverP=null;tip.style.opacity=0;renderer.domElement.style.cursor='grab'}
+});
+renderer.domElement.addEventListener('pointerleave',()=>{hoverP=null;tip.style.opacity=0});
+
+/* update */
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const red=new THREE.Color(C.red),ink=new THREE.Color(C.ink);
+const v3=new THREE.Vector3();
+function update(){
+  const focus=Math.max(0,Math.min(N-1,Math.ceil(tNow-1e-3)-1));
+  pieces.forEach(p=>{
+    let q=Math.max(0,Math.min(1,(tNow-p.step)*1.25-p.delay));q=ease(q);p.vis=q;
+    p.obj.visible=q>0.002;
+    const ex=explode*[0,2.4,4.2][p.level];
+    p.obj.position.y=p.base.y+ex+(p.type==='drop'?(1-q)*p.lift:0);
+    if(p.type==='grow'){p.obj.scale.y=Math.max(0.001,q)}
+    const ghost=p.shell&&(xray||(focus===4&&tNow>4&&tNow<5.2))?0.16:1;
+    p.mats.forEach((m,i)=>{m.opacity=p.baseOp[i]*(p.type==='fade'||p.type==='drop'?q:1)*(m.isLineBasicMaterial?1:ghost);m.depthWrite=m.opacity>0.6});
+    const on=p.step===focus&&tNow<N+0.01&&q>0&&q<1.0001&&!(tNow>=N-0.001&&!playing&&false);
+    const hl=(p.step===focus&&tNow-p.step>0&&tNow-p.step<1.6)||p===hoverP;
+    p.edges.forEach(m=>m.color.copy(hl?red:ink));
+  });
+  // labels
+  const lblOK=showLabels;
+  pieces.forEach(p=>{if(!p.el)return;
+    v3.copy(p.anchor);v3.y+=explode*[0,2.4,4.2][p.level];v3.add(root.position).project(cam);
+    p.el.style.left=((v3.x+1)/2*W)+'px';p.el.style.top=((1-v3.y)/2*H)+'px';
+    p.el.style.opacity=lblOK&&p.vis>0.85?1:0});
+  dims.forEach(d=>{v3.copy(d.a).add(root.position).project(cam);d.el.style.left=((v3.x+1)/2*W)+'px';d.el.style.top=((1-v3.y)/2*H)+'px';d.el.style.opacity=lblOK?1:0});
+  // UI
+  document.getElementById('stepCount').textContent='STEP '+String(Math.min(N,Math.ceil(tNow-1e-3))).padStart(2,'0')+' / '+N;
+  stepList.querySelectorAll('button').forEach((b,i)=>{b.classList.toggle('on',i===focus);b.classList.toggle('done',i<focus)});
+  scrub.value=tNow;
+}
+
+let active=false,last=performance.now();
+function loop(now){
+  if(!active)return;
+  const dt=Math.min(0.05,(now-last)/1000);last=now;
+  if(playing){tNow+=dt*0.75;if(tNow>=N){tNow=N;playing=false;playBtn.textContent='Replay'}tgt=tNow}
+  else{tNow+=(tgt-tNow)*Math.min(1,dt*3.5);if(Math.abs(tgt-tNow)<0.002)tNow=tgt}
+  explode+=(explodeT-explode)*Math.min(1,dt*4);
+  if(camK<1&&camTo){camK=Math.min(1,camK+dt*1.6);const k=ease(camK);
+    cam.position.lerpVectors(camFrom.p,camTo.p,k);cam.zoom=camFrom.z+(camTo.z-camFrom.z)*k;controls.target.lerpVectors(camFrom.t,camTo.t,k);cam.updateProjectionMatrix()}
+  controls.update();update();renderer.render(scene,cam);
+  requestAnimationFrame(loop);
+}
+let first=true;
+function onSlide(s){
+  const on=s===slide;
+  if(on&&!active){active=true;last=performance.now();
+    if(first){first=false;tNow=0;tgt=N;playing=true;playBtn.textContent='Pause'}
+    requestAnimationFrame(loop)}
+  else if(!on)active=false;
+}
+document.addEventListener('slide',e=>onSlide(e.detail));
+onSlide(document.querySelector('.slide.active'));
+</script>
+</body>
+</html>

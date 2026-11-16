@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><defs>
+<pattern id="ins" width="1.4" height="1.4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.4" stroke="#7a7a7a" stroke-width="0.12"/></pattern>
+<pattern id="ground" width="1.8" height="1.8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="1.8" stroke="#555" stroke-width="0.14"/></pattern>
+<pattern id="mesh" width="0.8" height="0.8" patternUnits="userSpaceOnUse"><path d="M0 0 L0.8 0.8 M0.8 0 L0 0.8" stroke="#2a2a2a" stroke-width="0.07"/></pattern>
+<pattern id="gravel" width="3" height="3" patternUnits="userSpaceOnUse"><circle cx="0.6" cy="0.8" r="0.17" fill="#a3a3a3"/><circle cx="2.1" cy="2.2" r="0.14" fill="#b3b3b3"/><circle cx="2.4" cy="0.6" r="0.11" fill="#b3b3b3"/><circle cx="1.1" cy="2.3" r="0.1" fill="#bbb"/></pattern>
+<pattern id="conc" width="2.2" height="2.2" patternUnits="userSpaceOnUse"><circle cx="0.5" cy="0.6" r="0.12" fill="#777"/><circle cx="1.6" cy="1.5" r="0.09" fill="#888"/><path d="M1.4 0.3 l0.3 0.25 l-0.35 0.1z" fill="#999"/></pattern>
+<pattern id="screed" width="2.4" height="2.4" patternUnits="userSpaceOnUse"><circle cx="0.6" cy="0.6" r="0.08" fill="#888"/><circle cx="1.8" cy="1.7" r="0.08" fill="#888"/></pattern>
+<pattern id="lawn" width="2.4" height="2.4" patternUnits="userSpaceOnUse"><path d="M0.4 1.2 l0.15 -0.4 M1.6 2.0 l0.15 -0.4 M1.8 0.6 l0.12 -0.35" stroke="#8fa77f" stroke-width="0.12"/></pattern>
+</defs>
+<rect x="0" y="0" width="420" height="297" fill="#ffffff"/>
+<rect x="10" y="10" width="400" height="277" fill="none" stroke="#141414" stroke-width="0.5"/>
+<line x1="10" y1="256" x2="410" y2="256" stroke="#141414" stroke-width="0.5"/>
+<line x1="96" y1="256" x2="96" y2="287" stroke="#141414" stroke-width="0.25"/>
+<line x1="228" y1="256" x2="228" y2="287" stroke="#141414" stroke-width="0.25"/>
+<line x1="296" y1="256" x2="296" y2="287" stroke="#141414" stroke-width="0.25"/>
+<line x1="368" y1="256" x2="368" y2="287" stroke="#141414" stroke-width="0.25"/>
+<text x="14.00" y="264.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="5" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.4">CONTAINER HOUSE</text>
+<text x="14.00" y="270.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#141414">5 × 40 ft High Cube · 2 bedrooms · ≈148 m² gross</text>
+<text x="14.00" y="274.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#7d7d7d">Freestanding, rural plot · Mediterranean climate</text>
+<text x="14.00" y="281.50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.9" font-weight="400" text-anchor="start" fill="#7d7d7d">Prepared for David Budzik</text>
+<text x="100.00" y="260.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">GENERAL NOTES</text>
+<text x="100.00" y="264.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#141414">All dimensions in metres unless noted; levels from ±0.00 = finished ground. Container sizes are nominal 40</text>
+<text x="100.00" y="266.95" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#141414">ft HC (12.19 × 2.44 × 2.90 m); verify against the purchased units. All steel (posts, lintels, seam beams,</text>
+<text x="100.00" y="269.50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#141414">void trimmers) and foundations to structural engineer&#x27;s design. Do not scale. Concept stage — for design</text>
+<text x="100.00" y="272.05" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.7" font-weight="400" text-anchor="start" fill="#141414">coordination and the Blender model only.</text>
+<text x="232.00" y="260.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">DATE</text>
+<text x="232.00" y="264.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#141414">28.10.2026</text>
+<text x="262.00" y="260.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">REVISION</text>
+<text x="262.00" y="264.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#141414">P1 · Concept issue</text>
+<text x="232.00" y="270.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">STATUS</text>
+<text x="232.00" y="274.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.0" font-weight="700" text-anchor="start" fill="#a8382b">CONCEPT — NOT FOR CONSTRUCTION</text>
+<text x="232.00" y="280.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">SOURCE</text>
+<text x="232.00" y="283.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.9" font-weight="400" text-anchor="start" fill="#141414">Design Brief, 28 Oct 2026</text>
+<text x="300.00" y="260.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">SHEET TITLE</text>
+<text x="300.00" y="266.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="3.2" font-weight="700" text-anchor="start" fill="#141414">DESIGN NOTES +</text>
+<text x="300.00" y="270.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="3.2" font-weight="700" text-anchor="start" fill="#141414">DECISIONS</text>
+<text x="300.00" y="281.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">SCALE</text>
+<text x="300.00" y="284.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#141414">—</text>
+<text x="372.00" y="260.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.5" font-weight="400" text-anchor="start" fill="#7d7d7d" letter-spacing="0.3">SHEET</text>
+<text x="389.00" y="277.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" fill="#141414">A-001</text>
+<text x="20.00" y="22.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">DESIGN DECISIONS (ADR SUMMARY)</text>
+<text x="20.00" y="27.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.8" font-weight="400" text-anchor="start" fill="#7d7d7d">Places where drawing the brief exposed a conflict. Full records in ADR.md. Status: Accepted by David Budzik, 28 Oct 2026.</text>
+<rect x="20.00" y="31.40" width="122.00" height="6.20" rx="0" fill="#141414" stroke="none" stroke-width="0.15"/>
+<text x="22.00" y="36.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.3" font-weight="700" text-anchor="start" fill="#fff">ADR-001  Upper-floor circulation</text>
+<text x="20.00" y="43.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">CONTEXT</text>
+<text x="20.00" y="46.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">The brief orders the upper floor as main bedroom (0–4.2) | ensuite +</text>
+<text x="20.00" y="48.85" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">walk-in (4.2–6.4) | bath (5.6–7.6) | landing (6.4+). Read literally, the</text>
+<text x="20.00" y="51.30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">main bedroom has no door to the landing: every route passes through a wet</text>
+<text x="20.00" y="53.75" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">room.</text>
+<text x="20.00" y="59.20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#a8382b" letter-spacing="0.3">DECISION</text>
+<text x="20.00" y="62.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Run a 0.80 m hall from the landing westward to the main bedroom between</text>
+<text x="20.00" y="65.05" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">the ensuite (north) and the walk-in + bath (south). Ensuite 5.0→4.1 m²,</text>
+<text x="20.00" y="67.50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">walk-in 3.0→2.1 m², bath 4.5→3.6 m².</text>
+<text x="20.00" y="72.95" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">OPTIONS NOT TAKEN</text>
+<text x="20.00" y="76.35" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Rejected: B) swap bedrooms so the main is at the east end — loses the west</text>
+<text x="20.00" y="78.80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">view glass the brief wants for the main bedroom. C) reach the main bedroom</text>
+<text x="20.00" y="81.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">through the walk-in — the dressing room becomes the corridor, ensuite</text>
+<text x="20.00" y="83.70" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">still cut off.</text>
+<rect x="148.00" y="31.40" width="122.00" height="6.20" rx="0" fill="#141414" stroke="none" stroke-width="0.15"/>
+<text x="150.00" y="36.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.3" font-weight="700" text-anchor="start" fill="#fff">ADR-002  Stair on north, WC internal</text>
+<text x="148.00" y="43.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">CONTEXT</text>
+<text x="148.00" y="46.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">The brief puts the stair in C1&#x27;s north strip and the WC + laundry in C1&#x27;s</text>
+<text x="148.00" y="48.85" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">south strip beside it, but also gives the WC a slot window. A south-strip</text>
+<text x="148.00" y="51.30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">WC has no outside wall.</text>
+<text x="148.00" y="56.75" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#a8382b" letter-spacing="0.3">DECISION</text>
+<text x="148.00" y="60.15" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Keep the stair on the north wall (the W06 slots light the flight). The WC</text>
+<text x="148.00" y="62.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">is internal: continuous mechanical extract, high borrowed light over the</text>
+<text x="148.00" y="65.05" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">door. The upper wet rooms sit above the kitchen, so the soil stack drops</text>
+<text x="148.00" y="67.50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">in the tall-unit / under-stair zone at x ≈ 7.5.</text>
+<text x="148.00" y="72.95" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">OPTIONS NOT TAKEN</text>
+<text x="148.00" y="76.35" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Rejected: swap stair and WC strips — the stair would sit against the open</text>
+<text x="148.00" y="78.80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">hall and lose the slot windows, and the WC would face the north service</text>
+<text x="148.00" y="81.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">side next to the heat-pump units.</text>
+<rect x="276.00" y="31.40" width="122.00" height="6.20" rx="0" fill="#141414" stroke="none" stroke-width="0.15"/>
+<text x="278.00" y="36.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.3" font-weight="700" text-anchor="start" fill="#fff">ADR-003  D02 red doors: inside face only</text>
+<text x="276.00" y="43.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">CONTEXT</text>
+<text x="276.00" y="46.40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">The original red doors are the feature wall at the foot of the stair, but</text>
+<text x="276.00" y="48.85" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">they are also the external end wall of C1. Insulating on the inside hides</text>
+<text x="276.00" y="51.30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">them; leaving them bare makes a 7 m² uninsulated steel wall.</text>
+<text x="276.00" y="56.75" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#a8382b" letter-spacing="0.3">DECISION</text>
+<text x="276.00" y="60.15" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Keep the doors bare inside and insulate outside: ≈80 mm insulation and a</text>
+<text x="276.00" y="62.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">charcoal corrugated over-cladding panel on the east face of C1. The east</text>
+<text x="276.00" y="65.05" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">facade reads as continuous charcoal; the red is an interior moment.</text>
+<text x="276.00" y="70.50" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.6" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">OPTIONS NOT TAKEN</text>
+<text x="276.00" y="73.90" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">Rejected: bare doors both sides (thermal bridge and condensation in a</text>
+<text x="276.00" y="76.35" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">heated stair void). Also noted: W09 east glazing to C3 is added because</text>
+<text x="276.00" y="78.80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">the brief asks for glass on both short ends but schedules none on the</text>
+<text x="276.00" y="81.25" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">east.</text>
+<text x="20.00" y="152.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">ASSUMPTIONS IN THESE DRAWINGS</text>
+<text x="20.00" y="158.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">· Levels: piers 400 mm, GF FFL +0.55, UF FFL +3.45 (floor-to-floor 2.90 = one container), roof top +6.50.</text>
+<text x="20.00" y="161.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">· Wall build-up 150 mm (steel + 50–80 closed-cell foam + stud + board); clear height ≈2.45 m both floors.</text>
+<text x="20.00" y="164.27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">· Plot is illustrative (28 × 32 m). Orientation: long glazed facade due south.</text>
+<text x="20.00" y="167.41" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">· New steel shown as intent only — sizes, connections and pier layout are for the structural engineer.</text>
+<text x="20.00" y="170.55" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">· Optional cantilever (upper block 1.2–2.4 m past the west end) not drawn; base design only.</text>
+<text x="222.00" y="152.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">OPEN QUESTIONS (from the brief, still open)</text>
+<text x="222.00" y="158.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">☐ Which plot: size, slope, view direction, zoning (agricultural or residential)?</text>
+<text x="222.00" y="161.14" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">☐ Budget ceiling — does the ≈₪2M reference include land? Get a container-builder quote against this set.</text>
+<text x="222.00" y="164.27" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">☐ Bedroom 2: guest, kids&#x27; room or studio / office?</text>
+<text x="222.00" y="167.41" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">☐ Base design or cantilevered upper floor?</text>
+<text x="222.00" y="170.55" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">☐ Israeli permit: a mamad (safe room) is normally required for a new home — the brief mentions a</text>
+<text x="222.00" y="173.09" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.75" font-weight="400" text-anchor="start" fill="#141414">&#x27;safe-room block&#x27; collection but places none. Needs a decision before permit drawings.</text>
+<text x="20.00" y="210.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="2.2" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">NEXT STEPS</text>
+<text x="20.00" y="216.00" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.8" font-weight="400" text-anchor="start" fill="#141414">1) ADR-001…003 accepted. 2) Survey + soil report for the chosen plot. 3) Structural engineer sizes the seam beams, posts, lintels and piers. 4) Build the Blender massing from these levels (object names = W/D codes). 5) Hero</text>
+<text x="20.00" y="218.61" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.8" font-weight="400" text-anchor="start" fill="#141414">render, shot 10 (aerial at dusk). 6) Resolve mamad position, then develop toward permit drawings.</text>
+<circle cx="24.00" cy="245.60" r="4.00" fill="none" stroke="#141414" stroke-width="0.25"/>
+<text x="24.00" y="246.80" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="3.6" font-weight="700" text-anchor="middle" fill="#141414">1</text>
+<text x="31.00" y="245.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#141414" letter-spacing="0.3">DESIGN NOTES, DECISIONS + OPEN QUESTIONS</text>
+<line x1="31.00" y1="247.60" x2="190.00" y2="247.60" stroke="#141414" stroke-width="0.25" stroke-linecap="butt"/>
+<text x="31.00" y="250.60" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="1.9" font-weight="400" text-anchor="start" fill="#7d7d7d">Scale —</text>
+</svg>
