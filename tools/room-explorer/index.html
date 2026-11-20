@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Look around the Moor House living room in an interactive 360° concept panorama.">
+<title>360° Room Explorer — The Moor House</title>
+<link rel="stylesheet" href="vendor/pannellum.css"><link rel="stylesheet" href="room.css?v=progressive-v1">
+</head>
+<body>
+<main class="room-app">
+  <header class="room-header"><div><p class="eyebrow" data-copy="eyebrow">THE MOOR HOUSE / ROOM EXPLORER</p><h1 data-copy="title">The living room.</h1></div><p class="intro" data-copy="intro">A moment inside. Every direction.</p></header>
+  <section class="room-stage" id="stage" aria-label="Interactive living room panorama">
+    <div id="panorama" tabindex="0" aria-label="360 degree room. Drag or use arrow keys to look around. Plus and minus zoom."></div>
+    <div class="quality-status" id="quality-status" role="status" hidden><span id="quality-text"></span><button id="quality-retry" type="button" hidden>Try again</button></div>
+    <div class="loading" id="loading" role="status"><span data-copy="loading">Opening the room…</span></div>
+    <div class="error" id="error" role="alert" hidden><h2 data-copy="errorTitle">The room couldn’t open.</h2><p data-copy="errorText">Try again, or open the panorama as an image.</p><div><button id="retry" data-copy="retry">Try again</button><a href="assets/living-room-compatible.webp" target="_blank" rel="noopener" data-copy="image">View image</a></div></div>
+    <aside class="detail" id="detail" aria-labelledby="detail-title" hidden><button class="detail-close" id="detail-close" aria-label="Close detail">×</button><p class="eyebrow" id="detail-kicker"></p><h2 id="detail-title"></h2><p id="detail-text"></p></aside>
+    <div class="stage-bottom"><p class="hint" id="hint" data-copy="hint">Drag to look around</p><div class="controls" role="group" aria-label="View controls">
+      <button id="zoom-out" aria-label="Zoom out" title="Zoom out" disabled>−</button><button id="zoom-in" aria-label="Zoom in" title="Zoom in" disabled>+</button>
+      <button id="reset" aria-label="Reset view" title="Reset view" disabled>↺</button><button id="rotate" aria-label="Start rotation" title="Start rotation" aria-pressed="false" disabled>▷</button><button id="fullscreen" aria-label="Full screen" title="Full screen">⛶</button>
+    </div></div>
+  </section>
+  <footer class="room-footer"><div class="focus-row"><span class="focus-label" data-copy="explore">Look closer</span><div class="focus-buttons" role="group" aria-label="Room details"><button data-detail="seating" aria-pressed="false" disabled><span>01</span><span data-copy="seating">Soft seating</span></button><button data-detail="view" aria-pressed="false" disabled><span>02</span><span data-copy="view">The landscape</span></button><button data-detail="timber" aria-pressed="false" disabled><span>03</span><span data-copy="timber">Timber & light</span></button></div><button id="details-toggle" aria-pressed="true" data-copy="hide" disabled>Hide markers</button></div><p class="concept" data-copy="concept">AI concept panorama · One fixed viewpoint · Illustrative design, not a measured room.</p></footer>
+  <p id="announcement" class="sr-only" aria-live="polite"></p>
+</main>
+<script src="vendor/pannellum.js"></script><script src="room-config.js"></script><script src="room-image.js?v=progressive-v1"></script><script src="room-variants.js?v=spacious-v2"></script><script src="room.js?v=progressive-v1"></script>
+</body></html>
