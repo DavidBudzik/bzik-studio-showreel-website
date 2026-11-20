@@ -1,0 +1,166 @@
+{
+  "footprint": 90,
+  "courtyard": 10.325000000000001,
+  "gross_enclosed": 79.675,
+  "rooms": [
+    {
+      "id": "R01",
+      "name": "Bath",
+      "area": 4,
+      "perimeter": 8.2,
+      "polygon": [
+        [
+          6.65,
+          0.25
+        ],
+        [
+          4.15,
+          0.25
+        ],
+        [
+          4.15,
+          1.85
+        ],
+        [
+          6.65,
+          1.85
+        ],
+        [
+          6.65,
+          0.25
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R02",
+      "name": "Bedroom",
+      "area": 9.75,
+      "perimeter": 12.7,
+      "polygon": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.25,
+          2.85
+        ],
+        [
+          4,
+          2.85
+        ],
+        [
+          4,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R03",
+      "name": "Kitchen",
+      "area": 7.669999999999998,
+      "perimeter": 11.099999999999998,
+      "polygon": [
+        [
+          6.800000000000001,
+          2.85
+        ],
+        [
+          9.75,
+          2.85
+        ],
+        [
+          9.75,
+          0.25
+        ],
+        [
+          6.800000000000001,
+          0.25
+        ],
+        [
+          6.800000000000001,
+          2.85
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R04",
+      "name": "Living / dining + hall",
+      "area": 39.3,
+      "perimeter": 26,
+      "polygon": [
+        [
+          0.25,
+          3
+        ],
+        [
+          0.25,
+          8.75
+        ],
+        [
+          6.65,
+          8.75
+        ],
+        [
+          6.65,
+          2
+        ],
+        [
+          4.15,
+          2
+        ],
+        [
+          4.15,
+          3
+        ],
+        [
+          0.25,
+          3
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R05",
+      "name": "Entry",
+      "area": 6.194999999999998,
+      "perimeter": 10.099999999999998,
+      "polygon": [
+        [
+          9.75,
+          8.75
+        ],
+        [
+          9.75,
+          6.65
+        ],
+        [
+          6.800000000000001,
+          6.65
+        ],
+        [
+          6.800000000000001,
+          8.75
+        ],
+        [
+          9.75,
+          8.75
+        ]
+      ],
+      "holes": []
+    }
+  ],
+  "room_sum": 66.91,
+  "thresholds": 1.0925,
+  "net_internal": 68.0075,
+  "walls": 11.6675,
+  "net_gross_percent": 85.35614057106997,
+  "method": "Proposed clear room polygons to finished wall faces, plus separately counted door/portal/sliding thresholds. Furniture included. Courtyard excluded. Not a statutory measurement standard."
+}

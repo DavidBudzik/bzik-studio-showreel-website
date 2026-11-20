@@ -1,0 +1,145 @@
+{
+  "footprint": 216,
+  "courtyard": 0,
+  "gross_enclosed": 216,
+  "rooms": [
+    {
+      "id": "R01",
+      "name": "Store",
+      "area": 7.44,
+      "perimeter": 11,
+      "polygon": [
+        [
+          11.7,
+          0.3
+        ],
+        [
+          8.6,
+          0.3
+        ],
+        [
+          8.6,
+          2.7
+        ],
+        [
+          11.7,
+          2.7
+        ],
+        [
+          11.7,
+          0.3
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R02",
+      "name": "Gallery III",
+      "area": 56.692499999999995,
+      "perimeter": 34.199999999999996,
+      "polygon": [
+        [
+          0.3,
+          6
+        ],
+        [
+          11.7,
+          6
+        ],
+        [
+          11.7,
+          2.85
+        ],
+        [
+          8.6,
+          2.85
+        ],
+        [
+          8.6,
+          2.8499999999999996
+        ],
+        [
+          8.45,
+          2.8499999999999996
+        ],
+        [
+          8.45,
+          0.3
+        ],
+        [
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          6
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R03",
+      "name": "Gallery II",
+      "area": 66.11999999999999,
+      "perimeter": 34.4,
+      "polygon": [
+        [
+          0.3,
+          12
+        ],
+        [
+          11.7,
+          12
+        ],
+        [
+          11.7,
+          6.2
+        ],
+        [
+          0.3,
+          6.2
+        ],
+        [
+          0.3,
+          12
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R04",
+      "name": "Gallery I / entry",
+      "area": 62.69999999999999,
+      "perimeter": 33.8,
+      "polygon": [
+        [
+          0.3,
+          17.7
+        ],
+        [
+          11.7,
+          17.7
+        ],
+        [
+          11.7,
+          12.2
+        ],
+        [
+          0.3,
+          12.2
+        ],
+        [
+          0.3,
+          17.7
+        ]
+      ],
+      "holes": []
+    }
+  ],
+  "room_sum": 192.9525,
+  "thresholds": 2.2150000000000007,
+  "net_internal": 195.1675,
+  "walls": 20.83250000000001,
+  "net_gross_percent": 90.35532407407408,
+  "method": "Proposed clear room polygons to finished wall faces, plus separately counted door/portal/sliding thresholds. Furniture included. Courtyard excluded. Not a statutory measurement standard."
+}

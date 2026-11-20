@@ -1,0 +1,100 @@
+{
+  "footprint": 72,
+  "courtyard": 0,
+  "gross_enclosed": 72,
+  "rooms": [
+    {
+      "id": "R01",
+      "name": "Bath",
+      "area": 7.199999999999998,
+      "perimeter": 11.2,
+      "polygon": [
+        [
+          8.1,
+          2.3
+        ],
+        [
+          11.7,
+          2.3
+        ],
+        [
+          11.7,
+          0.3
+        ],
+        [
+          8.1,
+          0.3
+        ],
+        [
+          8.1,
+          2.3
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R02",
+      "name": "Living / dining / kitchen",
+      "area": 41.31,
+      "perimeter": 26.1,
+      "polygon": [
+        [
+          7.95,
+          5.7
+        ],
+        [
+          7.95,
+          0.3
+        ],
+        [
+          0.3,
+          0.3
+        ],
+        [
+          0.3,
+          5.7
+        ],
+        [
+          7.95,
+          5.7
+        ]
+      ],
+      "holes": []
+    },
+    {
+      "id": "R03",
+      "name": "Bedroom",
+      "area": 11.700000000000001,
+      "perimeter": 13.7,
+      "polygon": [
+        [
+          8.1,
+          5.7
+        ],
+        [
+          11.7,
+          5.7
+        ],
+        [
+          11.7,
+          2.4499999999999997
+        ],
+        [
+          8.1,
+          2.4499999999999997
+        ],
+        [
+          8.1,
+          5.7
+        ]
+      ],
+      "holes": []
+    }
+  ],
+  "room_sum": 60.21,
+  "thresholds": 0.569999999999999,
+  "net_internal": 60.78,
+  "walls": 11.219999999999999,
+  "net_gross_percent": 84.41666666666667,
+  "method": "Proposed clear room polygons to finished wall faces, plus separately counted door/portal/sliding thresholds. Furniture included. Courtyard excluded. Not a statutory measurement standard."
+}
